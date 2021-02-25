@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h6{
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 24px;
+}
+
+.slide{
+    background-image: url("../resources/pexels-sharon-mccutcheon-1191639.jpg");
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.degradado{
+    background: linear-gradient(90deg, #42d9c700, #42D9C8);
+    width: 100%;
+    height: calc(100vh - 73px) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.equis{
+    max-width: 500px;
+}
