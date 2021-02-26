@@ -3,8 +3,20 @@
     padding: 0;
 }
 
-h6{
+p {
+    font-family: Open Sans;
     font-size: 18px;
+    font-weight: normal;
+}
+
+h1{
+    font-family: Yeseva One;
+    font-weight: normal;
+    font-size: 48px;
+}
+
+h6{
+    font-size: 14px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -42,6 +54,68 @@ h6{
     align-items: center;
 }
 
+.titulo{
+    font-size: 36px;
+    color: #FFFFFF;
+}
+
 .equis{
     max-width: 500px;
+    padding-right: 4em;
 }
+
+.info{
+    padding-top: 2em;
+    color: #FFFFFF;
+}
+
+.reason{
+    background: #F282BE;
+    width: 100%;
+}
+
+.reason_title{
+    padding: 1.5em;
+    color: #FFFFFF;
+}
+
+.reason_info{
+    padding-left: 3.5em;
+    padding-bottom: 10em;
+    color: #FFFFFF;
+}
+
+.reason_graphic{
+    
+}
+
+.why_title{
+    display: flex;
+    justify-content: center;
+    padding: 3.5em;
+}
+
+.why_info{
+    display: flex;
+    padding-left: 3.5em;
+    padding-right: 3.5em;
+    justify-content: center;
+}
+
+.why_quality{
+    padding-left: 1.75em;
+    padding-right: 1.75em;
+}
+
+.why_satisfied{
+    padding-left: 1.75em;
+    padding-right: 1.75em;
+}
+
+.why_smile{
+    padding-left: 1.75em;
+    padding-right: 1.75em;
+}
+
+
+
