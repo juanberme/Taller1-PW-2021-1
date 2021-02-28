@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: Open Sans;
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+p .reason_info {
+  text-align: left;
+}
+
+h1 {
+  font-family: Yeseva One;
+  font-weight: normal;
+  font-size: 48px;
+}
+
+h6 {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+}
+
+.slide {
+  background-image: url("../resources/pexels-sharon-mccutcheon-1191639.jpg");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide_degradado {
+  background: -webkit-gradient(linear, left top, right top, from(#42d9c700), to(#42D9C8));
+  background: linear-gradient(90deg, #42d9c700, #42D9C8);
+  width: 100%;
+  height: calc(100vh - 73px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slide_title {
+  font-size: 36px;
+  color: #FFFFFF;
+}
+
+.slide_content {
+  max-width: 500px;
+  padding-right: 4em;
+}
+
+.slide_info {
+  padding-top: 2em;
+  color: #FFFFFF;
+}
+
+.slide_button {
+  margin-top: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 4em;
+  padding-right: 4em;
+  border-radius: 4px;
+  background: #7B8CDE;
+  color: #FFFFFF;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.reason {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #F282BE;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.reason_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-right: 4em;
+}
+
+.reason_donut {
+  padding-top: 3.5em;
+  width: 442px;
+  height: 574px;
+}
+
+.reason_title {
+  padding: 1.5em;
+  color: #FFFFFF;
+}
+
+.reason_info {
+  padding-left: 3.5em;
+  padding-bottom: 10em;
+  color: #FFFFFF;
+}
+
+.why_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.why_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 3.5em;
+}
+
+.why_quality {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 1.75em;
+  padding-right: 1.75em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.why_satisfied {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 1.75em;
+  padding-right: 1.75em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.why_smile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 1.75em;
+  padding-right: 1.75em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.why_estrella {
+  width: 75px;
+  height: 72px;
+  padding-bottom: 2em;
+}
+
+.why_satisfecho {
+  width: 72px;
+  height: 72px;
+  padding-bottom: 2em;
+}
+
+.why_sonrisa {
+  width: 72px;
+  height: 72px;
+  padding-bottom: 2em;
+}
+
+.destacado {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #7B8CDE;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.destacado_title {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  color: #FFFFFF;
+}
+
+.comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3.5em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comment_opinion {
+  font-family: Yeseva One;
+  font-weight: normal;
+  font-size: 48px;
+  text-align: center;
+}
+
+.comment_person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-top: 1em;
+}
+
+.comment_name {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.comment_city {
+  font-family: 'Open Sans', sans-serif;
+}
+/*# sourceMappingURL=index.css.map */
