@@ -1,0 +1,53 @@
+.final{
+    background: burlywood;
+}
+
+/*p .final{
+    font-family: Open Sans;
+    font-size: 14px;
+}*/
+
+.final__info{
+    display: flex;
+    flex-direction: row;
+    padding: 3.5em;
+}
+
+.final__newsletter{
+    padding: 1.75em;
+    border: 4px solid #FFFFFF;
+}
+
+.final__email{
+    margin-top: 2em;
+}
+
+.final__button{
+    padding: 0.2em;
+}
+
+.letter{
+    font-size: Open Sans;
+    font-size: 36px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.final__content{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.final__contactUs{
+    padding: 1.75em;
+}
+
+.final__about{
+    padding: 1.75em;
+}
+
+.final__products{
+    padding: 1.75em;
+}
+

@@ -1,0 +1,43 @@
+.slide{
+    background-image: url("../resources/pexels-sharon-mccutcheon-1191639.jpg");
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide_degradado{
+    background: linear-gradient(90deg, #42d9c700, #42D9C8);
+    width: 100%;
+    height: calc(100vh - 73px) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.slide_title{
+    font-size: 36px;
+    color: #FFFFFF;
+}
+
+.slide_content{
+    max-width: 500px;
+    padding-right: 4em;
+}
+
+.slide_info{
+    padding-top: 2em;
+    color: #FFFFFF;
+}
+
+.slide_button{
+    margin-top: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 4em;
+    padding-right: 4em;
+    border-radius: 4px;
+    background: #7B8CDE;
+    color: #FFFFFF;
+    justify-content: center;
+}

@@ -24,10 +24,6 @@ h6{
     font-family: 'Open Sans', sans-serif;
 }
 
-button{
-    
-}
-
 .menu{
     display: flex;
     justify-content: space-between;
@@ -45,182 +41,13 @@ button{
     column-gap: 24px;
 }
 
-.slide{
-    background-image: url("../resources/pexels-sharon-mccutcheon-1191639.jpg");
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-}
 
-.slide_degradado{
-    background: linear-gradient(90deg, #42d9c700, #42D9C8);
-    width: 100%;
-    height: calc(100vh - 73px) ;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-}
 
-.slide_title{
-    font-size: 36px;
-    color: #FFFFFF;
-}
-
-.slide_content{
-    max-width: 500px;
-    padding-right: 4em;
-}
-
-.slide_info{
-    padding-top: 2em;
-    color: #FFFFFF;
-}
-
-.slide_button{
-    margin-top: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 4em;
-    padding-right: 4em;
-    border-radius: 4px;
-    background: #7B8CDE;
-    color: #FFFFFF;
-    justify-content: center;
-}
-
-.reason{
-    display: flex;
-    background: #F282BE;
-    width: 100%;
-    flex-direction: row;
-}
-
-.reason_content{
-    display: flex;
-    flex-direction: column;
-    padding-right: 4em;
-}
-
-.reason_donut{
-    padding-top: 3.5em;
-    width: 442px;
-    height: 574px;
-}
-
-.reason_title{
-    padding: 1.5em;
-    color: #FFFFFF;
-}
-
-.reason_info{
-    padding-left: 3.5em;
-    padding-bottom: 10em;
-    color: #FFFFFF;
-}
-
-.reason_button{
-    
-}
-
-.why_title{
-    display: flex;
-    justify-content: center;
-    padding-top: 2em;
-    padding-bottom: 2em;
-}
-
-.why_info{
-    display: flex;
-    padding-left: 3.5em;
-    padding-right: 3.5em;
-    justify-content: center;
-    padding-bottom: 3.5em;
-}
-
-.why_quality{
-    display: flex;
-    padding-left: 1.75em;
-    padding-right: 1.75em;
-    flex-direction: column;
-    align-items: center;
-}
-
-.why_satisfied{
-    display: flex;
-    padding-left: 1.75em;
-    padding-right: 1.75em;
-    flex-direction: column;
-    align-items: center;
-}
-
-.why_smile{
-    display: flex;
-    padding-left: 1.75em;
-    padding-right: 1.75em;
-    flex-direction: column;
-    align-items: center;
-}
-
-.why_estrella{
-    width: 75px;
-    height: 72px;
-    padding-bottom: 2em;
-}
-
-.why_satisfecho{
-    width: 72px;
-    height: 72px;
-    padding-bottom: 2em;
-}
-
-.why_sonrisa{
-    width: 72px;
-    height: 72px;
-    padding-bottom: 2em;
-}
-
-.destacado{
-    display: flex;
-    background: #7B8CDE;
-    width: 100%;
-    justify-content: center;
-}
-
-.destacado_title{
-    padding-top: 2em;
-    padding-bottom: 2em;
-    color: #FFFFFF;
-}
-
-.comment{
-    display: flex;
-    justify-content: center;
-    padding: 3.5em;
-    flex-direction: column;
-}
-
-.comment_opinion{
-    font-family: Yeseva One;
-    font-weight: normal;
-    font-size: 48px;
-    text-align:center;
-}
-
-.comment_person{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-top: 1em;
-}
-
-.comment_name{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-}
-
-.comment_city{
-    font-family: 'Open Sans', sans-serif;
-}
+@import 'indexSlide';
+@import 'indexReason';
+@import 'indexWhy';
+@import 'indexDestacado';
+@import 'indexComment';
+@import 'indexFinal';
 
 
