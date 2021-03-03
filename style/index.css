@@ -59,6 +59,8 @@ h6 {
           flex-direction: row;
   -webkit-column-gap: 24px;
           column-gap: 24px;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .slide {
@@ -154,6 +156,7 @@ h6 {
 .reason_info {
   padding-left: 3.5em;
   color: #FFFFFF;
+  text-align: center;
   padding-bottom: 3.5em;
 }
 
@@ -263,15 +266,30 @@ h6 {
   display: flex;
   background: #7B8CDE;
   width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .destacado_title {
   padding-top: 2em;
   padding-bottom: 2em;
+  text-align: center;
   color: #FFFFFF;
+}
+
+.destacado_products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 6em;
 }
 
 .comment {
@@ -293,6 +311,8 @@ h6 {
   font-weight: normal;
   font-size: 48px;
   text-align: center;
+  padding-left: 4em;
+  padding-right: 4em;
 }
 
 .comment_person {

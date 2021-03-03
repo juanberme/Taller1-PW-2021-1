@@ -2,11 +2,19 @@
     display: flex;
     background: #7B8CDE;
     width: 100%;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .destacado_title{
     padding-top: 2em;
     padding-bottom: 2em;
+    text-align: center;
     color: #FFFFFF;
+}
+
+.destacado_products{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 6em;
 }
