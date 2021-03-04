@@ -18,3 +18,9 @@
     justify-content: space-around;
     padding-bottom: 6em;
 }
+
+@media only screen and (max-width: 850px){
+    .destacado_products{
+        flex-direction: column;
+    }
+}

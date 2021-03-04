@@ -11,6 +11,7 @@
     padding-right: 3.5em;
     justify-content: center;
     padding-bottom: 8em;
+    flex-direction: row;
 }
 
 .why_quality{
@@ -53,4 +54,10 @@
     width: 72px;
     height: 72px;
     padding-bottom: 2em;
+}
+
+@media only screen and (max-width: 850px){
+    .why_info{
+        flex-direction: column;
+    }
 }
