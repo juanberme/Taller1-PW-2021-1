@@ -6,11 +6,7 @@
 p {
   font-family: Open Sans;
   font-size: 18px;
-  font-weight: lighter;
-}
-
-p .reason_info {
-  text-align: left;
+  font-weight: normal;
 }
 
 h1 {
@@ -114,9 +110,9 @@ h6 {
   border-radius: 4px;
   background: #7B8CDE;
   color: #FFFFFF;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .reason {
@@ -157,10 +153,11 @@ h6 {
   padding-right: 6em;
   padding-left: 3.5em;
   color: #FFFFFF;
-  padding-bottom: 3.5em;
+  text-align: justify;
 }
 
 .reason_button {
+  margin-top: 2em;
   margin-left: 4em;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -386,10 +383,20 @@ h6 {
 
 .final__email {
   margin-top: 2em;
+  margin-right: 2em;
+  width: 80%;
+  background: none;
+  color: #FFFFFF;
+  border: none;
+  border-bottom: 2px solid #FFFFFF;
+  font-family: Roboto;
 }
 
 .final__button {
-  padding: 0.2em;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
 }
 
 .letter {
@@ -406,14 +413,14 @@ h6 {
 }
 
 .final__content h4 {
-  font-family: Open Sans;
+  font-family: Roboto;
   font-size: 16px;
   color: #FFFFFF;
   opacity: 0.5;
 }
 
 .final__content p {
-  font-family: Open Sans;
+  font-family: Roboto;
   font-size: 12px;
   color: #FFFFFF;
   padding-top: 1em;
