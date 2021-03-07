@@ -178,7 +178,6 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 2em;
   padding-bottom: 2em;
 }
 
@@ -196,6 +195,7 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  text-align: center;
 }
 
 .why_quality {
@@ -211,6 +211,8 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .why_satisfied {
@@ -226,6 +228,8 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .why_smile {
@@ -241,6 +245,8 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .why_estrella {
