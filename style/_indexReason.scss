@@ -23,7 +23,7 @@
 }
 
 .reason_info{
-    padding-right: 6em;
+    padding-right: 10em;
     padding-left: 3.5em;
     color: #FFFFFF;
     text-align: justify;
@@ -40,4 +40,17 @@
     background: #7B8CDE;
     color: #FFFFFF;
     align-items: center;
+}
+
+@media only screen and (max-width: 1100px){
+    .reason{
+        flex-direction: column;
+    }
+    .reason_info{
+        padding-left: 3.5em;
+    }
+    .reason_donut{
+        justify-content: flex-end;
+    }
+    
 }
