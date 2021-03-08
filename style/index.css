@@ -351,7 +351,7 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 5em;
+  margin: 5em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -363,8 +363,6 @@ h6 {
   font-weight: normal;
   font-size: 48px;
   text-align: center;
-  padding-left: 4em;
-  padding-right: 4em;
 }
 
 .comment_person {
@@ -391,6 +389,10 @@ h6 {
 }
 
 @media only screen and (max-width: 1100px) {
+  .comment {
+    margin-left: 0em;
+    margin-right: 0em;
+  }
   .comment_opinion {
     padding-left: 1em;
     padding-right: 1em;
