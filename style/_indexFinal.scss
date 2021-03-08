@@ -71,3 +71,13 @@
     padding: 1.75em;
 }
 
+@media only screen and (max-width: 1100px){
+    .final__info{
+        flex-direction: column;
+    }
+
+    .final__content{
+        flex-direction: column;
+    }
+}
+

@@ -376,7 +376,7 @@ h6 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding-top: 1em;
+  margin: 1.5em;
 }
 
 .comment_name {
@@ -477,5 +477,20 @@ h6 {
 
 .final__products {
   padding: 1.75em;
+}
+
+@media only screen and (max-width: 1100px) {
+  .final__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .final__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=index.css.map */
