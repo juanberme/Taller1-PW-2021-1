@@ -8,23 +8,24 @@
 .reason_content{
     display: flex;
     flex-direction: column;
-    padding-right: 4em;
+    
 }
 
 .reason_donut{
-    padding-top: 3.5em;
+    margin-top: 3.5em;
     width: 442px;
     height: 574px;
 }
 
 .reason_title{
-    padding: 1.5em;
+    margin: 1.5em;
     color: #FFFFFF;
+    text-align: center;
 }
 
 .reason_info{
-    padding-right: 10em;
-    padding-left: 3.5em;
+    margin-right: 10em;
+    margin-left: 3.5em;
     color: #FFFFFF;
     text-align: justify;
 }
@@ -47,8 +48,11 @@
         flex-direction: column;
     }
     .reason_info{
-        padding-left: 3.5em;
+        margin-left: 3em;
+        margin-right: 3em;
     }
+
+
     .reason_donut{
         justify-content: flex-end;
     }
