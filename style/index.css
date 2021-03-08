@@ -363,6 +363,8 @@ h6 {
   font-weight: normal;
   font-size: 48px;
   text-align: center;
+  margin-left: 4em;
+  margin-right: 4em;
 }
 
 .comment_person {
@@ -390,8 +392,8 @@ h6 {
 
 @media only screen and (max-width: 1100px) {
   .comment {
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: calc(-2em);
+    margin-right: calc(-2em);
   }
   .comment_opinion {
     font-size: 40px;
