@@ -152,6 +152,12 @@ h6 {
   height: 574px;
 }
 
+.sparkle5 {
+  position: absolute;
+  left: 800px;
+  top: 1158px;
+}
+
 .reason_title {
   margin: 1.5em;
   color: #FFFFFF;
@@ -162,7 +168,7 @@ h6 {
   margin-right: 10em;
   margin-left: 3.5em;
   color: #FFFFFF;
-  text-align: justify;
+  text-align: left;
 }
 
 .reason_button {
@@ -190,11 +196,12 @@ h6 {
   .reason_info {
     margin-left: 3em;
     margin-right: 3em;
+    text-align: center;
   }
   .reason_donut {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 

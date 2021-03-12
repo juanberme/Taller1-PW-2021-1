@@ -17,6 +17,13 @@
     height: 574px;
 }
 
+.sparkle5{
+    position: absolute;
+    left: 800px;
+    top: 1158px;
+    
+}
+
 .reason_title{
     margin: 1.5em;
     color: #FFFFFF;
@@ -27,7 +34,7 @@
     margin-right: 10em;
     margin-left: 3.5em;
     color: #FFFFFF;
-    text-align: justify;
+    text-align: left;
 }
 
 .reason_button{
@@ -50,11 +57,12 @@
     .reason_info{
         margin-left: 3em;
         margin-right: 3em;
+        text-align: center;
     }
 
 
     .reason_donut{
-        justify-content: flex-end;
+        justify-content: center;
     }
     
 }
