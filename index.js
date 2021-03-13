@@ -1,10 +1,17 @@
 let sparkle5 = document.querySelector('.sparkle5');
+let slide_info = document.querySelector('.slide_info');
+let why_info = document.querySelector('.why_info');
 
 function handleMoveSparkle5() {
-    //console.log(window);
-    if(window.scrollY > 400 || window.scrollY < 700){
-        sparkle5.style.transform = 'translate( -'+ (window.scrollY -399) +'px, 0px)';
+    console.log(sparkle5.scrollX);
+    if(window.scrollY > slide_info.offsetTop){
+        sparkle5.style.transform = 'translate( -'+ (window.scrollY - slide_info.offsetTop) +'px, 0px)';
+        if( window.scrollY < why_info.offsetTop){
+            
+        }
+        
     }
+    
     
 }
 
