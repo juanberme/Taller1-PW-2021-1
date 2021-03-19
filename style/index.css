@@ -18,6 +18,7 @@ h1 {
 h6 {
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
+  color: #C4C4C4;
 }
 
 .menu {
@@ -37,6 +38,11 @@ h6 {
   padding: 24px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 3;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: white;
 }
 
 .option {
@@ -59,14 +65,66 @@ h6 {
   padding-right: 2em;
 }
 
-.slide {
-  background-image: url("../resources/slide1.jpg");
-  width: 100%;
-  background-size: cover;
-  background-position: center;
+.option2 {
+  display: none;
+  position: fixed;
+  top: 107px;
+  z-index: 1;
 }
 
-.slide_degradado {
+.option2 h6 {
+  color: white;
+  margin-right: 2em;
+}
+
+.menuPic {
+  display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+  .option {
+    display: none;
+  }
+  .menuPic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .option2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: right;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    background: rgba(123, 140, 222, 0.5);
+    width: 100%;
+  }
+  h6 {
+    padding: 1em;
+  }
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  width: 500%;
+  height: 680px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slide_degradado1 {
+  position: absolute;
+  top: 0;
   background: -webkit-gradient(linear, left top, right top, from(#42d9c700), to(#42D9C8));
   background: linear-gradient(90deg, #42d9c700, #42D9C8);
   width: 100%;
@@ -86,9 +144,48 @@ h6 {
           align-items: center;
 }
 
-.slide_title {
-  font-size: 36px;
-  color: #FFFFFF;
+.slide_degradado2 {
+  position: absolute;
+  top: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#42d9c700), to(#7B8CDE));
+  background: linear-gradient(90deg, #42d9c700, #7B8CDE);
+  width: 100%;
+  height: calc(100vh - 73px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slide_degradado3 {
+  position: absolute;
+  top: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#42d9c700), to(#F6BD60));
+  background: linear-gradient(90deg, #42d9c700, #F6BD60);
+  width: 100%;
+  height: calc(100vh - 73px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .slide_content {
@@ -125,6 +222,107 @@ h6 {
           align-items: center;
 }
 
+.slide_title {
+  font-size: 36px;
+  color: #FFFFFF;
+}
+
+.radioBtn {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* css for manual slide navigation*/
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  margin-top: -40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background: white;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+/*css for automatic navigation*/
+.navigation-auto {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -40px;
+}
+
+.navigation-auto div {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 40px;
+}
+
+#radio1.checked ~ .navigation-auto .auto-btn1 {
+  background: white;
+}
+
+#radio2.checked ~ .navigation-auto .auto-btn2 {
+  background: white;
+}
+
+#radio3.checked ~ .navigation-auto .auto-btn3 {
+  background: white;
+}
+
 @media only screen and (max-width: 1100px) {
   .slide_title {
     text-align: center;
@@ -138,6 +336,67 @@ h6 {
   }
 }
 
+/*.slide{
+    background-image: url("../resources/slide1.jpg");
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide_degradado{
+    background: linear-gradient(90deg, #42d9c700, #42D9C8);
+    width: 100%;
+    height: calc(100vh - 73px) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.slide_title{
+    font-size: 36px;
+    color: #FFFFFF;
+}
+
+.slide_content{
+    max-width: 500px;
+    padding-right: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide_info{
+    padding-top: 2em;
+    color: #FFFFFF;
+}
+
+.slide_button{
+    margin-top: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 4em;
+    padding-right: 4em;
+    border-radius: 4px;
+    background: #7B8CDE;
+    color: #FFFFFF;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1100px){
+    .slide_title{
+        text-align: center;
+    }
+
+    .slide_info{
+        text-align: center;
+    }
+
+    .slide_content{
+        padding-right: 2em;
+        padding-left: 2em;
+    }
+}*/
 .reason {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -148,6 +407,7 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  position: relative;
 }
 
 .reason_texto {
@@ -174,9 +434,21 @@ h6 {
   height: 574px;
 }
 
+.sparkle2 {
+  position: absolute;
+  left: 60%;
+  top: 10%;
+}
+
+.sparkle3 {
+  position: absolute;
+  left: 949px;
+  top: 1175px;
+}
+
 .sparkle5 {
   position: absolute;
-  left: 893px;
+  left: 1093px;
   top: 1158px;
 }
 

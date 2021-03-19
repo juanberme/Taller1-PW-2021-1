@@ -3,6 +3,7 @@
     background: #F282BE;
     width: 100%;
     flex-direction: row;
+    position: relative;
 }
 
 .reason_texto{
@@ -18,11 +19,28 @@
     margin-right: 3.5em;
     width: 442px;
     height: 574px;
+    
+}
+
+.reason_sparkle{
+
+}
+
+.sparkle2{
+    position: absolute;
+    left: 60%;
+    top: 10%;
+}
+
+.sparkle3{
+    position: absolute;
+    left: 949px;
+    top: 1175px;
 }
 
 .sparkle5{
     position: absolute;
-    left: 893px;
+    left: 1093px;
     top: 1158px;
     
 }

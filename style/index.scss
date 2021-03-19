@@ -18,6 +18,7 @@ h1{
 h6{
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
+    color: #C4C4C4;
 }
 
 .menu{
@@ -27,6 +28,10 @@ h6{
     flex-direction: row;
     padding: 24px;
     box-sizing: border-box;
+    z-index: 3;
+    position: sticky;
+    top: 0;
+    background: white;
 }
 
 .option{
@@ -39,6 +44,43 @@ h6{
     padding-right: 2em;
 }
 
+.option2{
+    display: none;
+    position: fixed;
+    top: 107px;
+    z-index: 1;
+    h6{
+        color: white;
+        margin-right: 2em;
+    }
+}
+
+.menuPic{
+    display: none;
+}
+
+
+@media only screen and (max-width: 1100px){
+    .option{
+        display: none;
+    }
+
+    .menuPic{
+        display: flex; 
+    }
+
+    .option2{
+        flex-direction: column;
+        text-align: right;
+        justify-content: flex-end;
+        background: rgba(123, 140, 222, 0.5);
+        width: 100%;
+    }
+
+    h6{
+        padding: 1em;
+    }
+}
 
 
 @import 'indexSlide';

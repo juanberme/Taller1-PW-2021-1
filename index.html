@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Yeseva+One&display=swap" rel="stylesheet">  
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sweet Mood</title>
 </head>
 <body class="web">
     <header class="menu">
@@ -21,10 +21,78 @@
             <h6>Productos</h6>
             <h6>Canasta</h6>
         </nav>
+        <img class="menuPic" src="./resources/menu.png">
 
     </header>
     
-    <div class="slide">
+    <!--Image Slider-->
+    <div class="newMenu">
+        <nav class="option2">
+            <h6>Inicio</h6>
+            <h6>Nosotros</h6>
+            <h6>Productos</h6>
+            <h6>Canasta</h6>
+        </nav>
+    </div>
+     <!--Image Slider start-->
+     <div class="slider">
+        <div class="slides">
+            <!--radio buttons start-->
+            <input class="radioBtn" type="radio" name="radio-btn" id="radio1">
+            <input class="radioBtn" type="radio" name="radio-btn" id="radio2">
+            <input class="radioBtn" type="radio" name="radio-btn" id="radio3">
+            <!--radio buttons end-->
+            <!--Slide images start-->
+            <div class="slide first">
+                <img class="carrousel_slide" src="./resources/slide1.jpg">
+                <div class="slide_degradado1">
+                    <div class="slide_content">
+                        <h1 class="slide_title">Somos la mejor tienda de donuts del mundo.</h1>
+                        <p class="slide_info">Podemos hacerlas con las decoraciones que quieras y <strong>enviárselas</strong> al lugar que quieras, te garantizamos que serán las <strong>donuts más deliciosas</strong> que hayas probado.</p>
+                        <input type="button" class="slide_button" value="Ver más">
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img class="carrousel_slide" src="./resources/slide2.jpg">
+                <div class="slide_degradado2">
+                    <div class="slide_content">
+                        <h1 class="slide_title">Las donuts más ricas del mundo las tenemos nosotros</h1>
+                        <p class="slide_info">Porque vas a comer una donut cualquiera, si puedes comer la <strong>mejor donut del mundo</strong>. Prueba las nuestras y te aseguramos que <strong>no te arrepentirás</strong>.</p>
+                        <input type="button" class="slide_button" value="Ver más">
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img class="carrousel_slide" src="./resources/slide3.jpg">
+                <div class="slide_degradado3">
+                    <div class="slide_content">
+                        <h1 class="slide_title">Somos la mejor tienda de donuts del mundo.</h1>
+                        <p class="slide_info">Podemos hacerlas con las decoraciones que quieras y <strong>enviárselas</strong> al lugar que quieras, te garantizamos que serán las <strong>donuts más deliciosas</strong> que hayas probado.</p>
+                        <input type="button" class="slide_button" value="Ver más">
+                    </div>
+                </div>
+            </div>
+            <!--Slide images end-->
+            <!--automatic navigation start-->
+            <div class="navigation-auto">
+                 <div class="auto-btn1"></div>
+                 <div class="auto-btn2"></div>
+                 <div class="auto-btn3"></div>
+            </div>
+            <!--automatic navigation end-->
+        </div>
+        <!--manual navigation start-->
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+        </div>
+        <!--manual navigation end-->
+    </div>
+<!--Image Slider end-->
+
+    <!--<div class="slide">
         <div class="slide_degradado">
             <div class="slide_content">
                 <h1 class="slide_title">Somos la mejor tienda de donuts del mundo.</h1>
@@ -32,7 +100,7 @@
                 <input type="button" class="slide_button" value="Ver más">
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="reason">
         <div class="reason_texto">
                 <h1 class="reason_title">¿Quiénes somos?</h1>
@@ -41,6 +109,8 @@
         </div>
         <img class="reason_donut" src="./resources/donutNueva.png"> 
         <div class="reason_sparkle">
+            <img class="sparkle2" src="./pill/Pill (2).png">
+            <img class="sparkle3" src="./pill/Pill (3).png">
             <img class="sparkle5" src="./pill/Pill (5).png">
         </div>  
     </div>
