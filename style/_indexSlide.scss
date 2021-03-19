@@ -1,5 +1,5 @@
 .slide{
-    background-image: url("../resources/pexels-sharon-mccutcheon-1191639.jpg");
+    background-image: url("../resources/slide1.jpg");
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -52,5 +52,10 @@
 
     .slide_info{
         text-align: center;
+    }
+
+    .slide_content{
+        padding-right: 2em;
+        padding-left: 2em;
     }
 }

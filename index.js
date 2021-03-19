@@ -5,10 +5,10 @@ let reason_title = document.querySelector('.reason_title');
 let why_info = document.querySelector('.why_info');
 
 function handleMoveSparkle5() {
-    console.log(sparkle5.scrollX);
+    console.log(window.scrollY);
     if(window.scrollY > slide_button.offsetTop){  
         if( window.scrollY < reason_title.offsetTop){
-            sparkle5.style.transform = 'translate( -'+ (window.scrollY - slide_button.offsetTop) +'px, 0px)';
+            sparkle5.style.transform = 'translate( -'+ (window.scrollY - slide_button.offsetTop) +'px,'+(((window.scrollY + slide_button.offsetTop)-1158)/4)+'px)';
         }
         
     }
