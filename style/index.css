@@ -334,6 +334,18 @@ h6 {
     padding-right: 2em;
     padding-left: 2em;
   }
+  .slide_degradado1 {
+    background: -webkit-gradient(linear, left top, left bottom, from(#42d9c75e), to(#42D9C8));
+    background: linear-gradient(180deg, #42d9c75e, #42D9C8);
+  }
+  .slide_degradado2 {
+    background: -webkit-gradient(linear, left top, left bottom, from(#7b8cde7e), to(#7B8CDE));
+    background: linear-gradient(180deg, #7b8cde7e, #7B8CDE);
+  }
+  .slide_degradado3 {
+    background: -webkit-gradient(linear, left top, left bottom, from(#f6bd6080), to(#F6BD60));
+    background: linear-gradient(180deg, #f6bd6080, #F6BD60);
+  }
 }
 
 /*.slide{
