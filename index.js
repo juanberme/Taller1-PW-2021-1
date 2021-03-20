@@ -22,11 +22,17 @@ setInterval(function(){
 }, 5000);
 
 
-//pepas
+//chispas
+let sparkle = document.querySelector('.sparkle');
 let sparkle2 = document.querySelector('.sparkle2');
 let sparkle3 = document.querySelector('.sparkle3');
 let sparkle4 = document.querySelector('.sparkle4');
 let sparkle5 = document.querySelector('.sparkle5');
+let sparkle8 = document.querySelector('.sparkle8');
+let sparkle9 = document.querySelector('.sparkle9');
+let sparkle10 = document.querySelector('.sparkle10');
+let sparkle11 = document.querySelector('.sparkle11');
+let sparkle12 = document.querySelector('.sparkle12');
 
 let slide_info = document.querySelector('.slide_info');
 let slide_button = document.querySelector('.slide_button');
@@ -38,10 +44,16 @@ function handleMoveSparkle5() {
     //console.log(window.scrollY, slide_info.offsetTop, reason.offsetTop);
     if(window.scrollY > slide_info.offsetTop){  
         if( window.scrollY < reason.offsetTop){
-            sparkle2.style.transform = 'translate(-'+((window.scrollY)/1.5)+'px,-'+((window.scrollY)/9)+'0px)';
-            sparkle3.style.transform = 'translate( -'+((window.scrollY)/2)+'px,'+((window.scrollY)/8)+'px)';
+            sparkle.style.transform = 'translate(-'+((window.scrollY)/4)+'px, '+((window.scrollY)/7.5)+'px)';
+            sparkle2.style.transform = 'translate(-'+((window.scrollY)/1.5)+'px,-'+((window.scrollY)/9)+'px)';
+            sparkle3.style.transform = 'translate(-'+((window.scrollY)/2)+'px,'+((window.scrollY)/8)+'px)';
             sparkle4.style.transform = 'translate(-'+((window.scrollY)/3)+'px, '+((window.scrollY)/15)+'px)';
-            sparkle5.style.transform = 'translate( -'+(window.scrollY/4)+'px, '+((window.scrollY)/1.7)+'px)';
+            sparkle5.style.transform = 'translate(-'+(window.scrollY/4)+'px, '+((window.scrollY)/1.7)+'px)';
+            sparkle8.style.transform = 'translate(-'+(window.scrollY/2)+'px, '+((window.scrollY)/3)+'px)';
+            sparkle9.style.transform = 'translate(-'+((window.scrollY))+'px, '+((window.scrollY)/10)+'px)';
+            sparkle10.style.transform = 'translate(-'+((window.scrollY)/3)+'px, '+((window.scrollY)/8.8)+'px)';
+            sparkle11.style.transform = 'translate(-'+((window.scrollY)/1.5)+'px, '+((window.scrollY)/15)+'px)';
+            sparkle12.style.transform = 'translate( -'+((window.scrollY)/2)+'px, '+((window.scrollY)/8)+'px)';
         } 
     } 
 }

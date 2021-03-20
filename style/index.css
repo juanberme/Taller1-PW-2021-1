@@ -461,6 +461,12 @@ h6 {
   height: 574px;
 }
 
+.sparkle {
+  position: absolute;
+  right: 10%;
+  top: 46%;
+}
+
 .sparkle2 {
   position: absolute;
   right: 10%;
@@ -482,7 +488,37 @@ h6 {
 .sparkle5 {
   position: absolute;
   right: 12%;
-  top: 10%;
+  top: 9%;
+}
+
+.sparkle8 {
+  position: absolute;
+  right: 14%;
+  top: 40%;
+}
+
+.sparkle9 {
+  position: absolute;
+  right: 16%;
+  top: 5%;
+}
+
+.sparkle10 {
+  position: absolute;
+  right: 24%;
+  top: 32%;
+}
+
+.sparkle11 {
+  position: absolute;
+  right: 20%;
+  top: 30%;
+}
+
+.sparkle12 {
+  position: absolute;
+  right: 8%;
+  top: 1%;
 }
 
 .reason_title {
