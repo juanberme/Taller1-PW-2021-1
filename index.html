@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Mood</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body class="web">
     <header class="menu">
@@ -133,6 +134,24 @@
     <div class="destacado">
         <h1 class="destacado_title">Productos destacado</h1>
         <div class="destacado_products">
+            <div class="destacado_content1">
+                <div class="donut1">
+                    <model-viewer src="./donut1/Donut_01.gltf" camera-controls auto-rotate></model-viewer>
+                </div>
+                <input type="button" class="destacado_button_1" value="Ver más">
+            </div>
+            <div class="destacado_content2">
+                <div class="donut2">
+                    <model-viewer src="./donut2/model.gltf" camera-controls auto-rotate></model-viewer>
+                </div>
+                <input type="button" class="destacado_button_2" value="Ver más">
+            </div>
+            <div class="destacado_content3">
+                <div class="donut3">
+                    <model-viewer src="./donut3/model.gltf" camera-controls auto-rotate></model-viewer>
+                </div>
+                <input type="button" class="destacado_button_3" value="Ver más">
+            </div>
         </div>
     </div>
     <div class="comment">

@@ -13,6 +13,8 @@
     align-items: center;
     margin-right: 10em; 
     z-index: 1;
+    margin-bottom: 6em;
+    
 }
 
 .reason_donut{
@@ -106,6 +108,11 @@
     background: #7B8CDE;
     color: #FFFFFF;
     align-items: center;
+    border: none;
+}
+
+.reason_button:hover{
+    background: #5068dd
 }
 
 @media only screen and (max-width: 950px){
