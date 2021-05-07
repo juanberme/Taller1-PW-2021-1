@@ -1,0 +1,111 @@
+label{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type='checkbox']{
+    margin-right: 1em;
+}
+
+input[type='number']{
+    background: white;
+    color: #7B8CDE;
+    padding: 1em;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type='text']{
+    background: white;
+    color: #7B8CDE;
+    padding: 1em;
+    border-radius: 10px;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.productForms{
+    background: #42D9C8;
+    color: white;
+    padding: 1em;
+    width: 350px;
+    border-radius: 20px;
+
+    &__name{
+        margin: 1em;
+    }
+
+    &__price{
+        margin-top: 2em;
+        margin-left: 1em;
+    }
+
+    &__inputPrice{
+        border-radius: 10px;
+    }
+
+    &__statusOptions{
+        margin-top: 1em;
+        margin-right: 1em;
+    }
+
+    &__status{
+        margin-top: 2em;
+        margin-left: 1em;
+    }
+
+    &__content{
+        margin-top: 2em;
+        margin-left: 1em;
+        margin-bottom: 2em;
+    }
+
+    &__contentOptions{
+        margin-top: 1em;
+    }
+
+    &__button{
+        background: #7B8CDE;
+        color: white;
+        padding: 1em;
+        border-radius: 10px;
+        border: none;
+    }
+
+    &__inputTypeProduct{
+        padding: 1em;
+        border-radius: 10px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        color: #7B8CDE;
+    }
+
+    &__labelTypeProduct{
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    &__type{
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+}
+
+.successfullMsg{
+    color: green;
+}
+
+.errorMsg{
+    color: red;
+}

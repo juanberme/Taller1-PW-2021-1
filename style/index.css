@@ -1243,4 +1243,120 @@ model-viewer {
     margin: 1.5em;
   }
 }
+
+label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+input[type='checkbox'] {
+  margin-right: 1em;
+}
+
+input[type='number'] {
+  background: white;
+  color: #7B8CDE;
+  padding: 1em;
+  border: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input[type='text'] {
+  background: white;
+  color: #7B8CDE;
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.productForms {
+  background: #42D9C8;
+  color: white;
+  padding: 1em;
+  width: 350px;
+  border-radius: 20px;
+}
+
+.productForms__name {
+  margin: 1em;
+}
+
+.productForms__price {
+  margin-top: 2em;
+  margin-left: 1em;
+}
+
+.productForms__inputPrice {
+  border-radius: 10px;
+}
+
+.productForms__statusOptions {
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+.productForms__status {
+  margin-top: 2em;
+  margin-left: 1em;
+}
+
+.productForms__content {
+  margin-top: 2em;
+  margin-left: 1em;
+  margin-bottom: 2em;
+}
+
+.productForms__contentOptions {
+  margin-top: 1em;
+}
+
+.productForms__button {
+  background: #7B8CDE;
+  color: white;
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
+}
+
+.productForms__inputTypeProduct {
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  color: #7B8CDE;
+}
+
+.productForms__labelTypeProduct {
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.productForms__type {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.successfullMsg {
+  color: green;
+}
+
+.errorMsg {
+  color: red;
+}
+
+.hidden {
+  display: none !important;
+}
 /*# sourceMappingURL=index.css.map */

@@ -5,34 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina administrativa</title>
+    <link rel="Stylesheet" href="./style/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Yeseva+One&display=swap" rel="stylesheet"> 
 </head>
 <body>
+
+    <p class="loadingMsg hidden">
+        Loading...
+    </p>
+
+    <p class="errorMsg hidden">
+        we had a problem, try again
+    </p>
+
+    <p class="successfullMsg hidden">
+        El producto se ha agregado correctamente
+    </p>
+
     <form class="productForms">
-        <label class="productForms__labelName" for="name">Nombre</label>
-        <input class="productForms__inputName" id="name" type="text" placeholder="Nombre del producto">
+       
+        <div class="productForms__name">
+            <label class="productForms__labelName" for="name">Nombre</label>
+            <input class="productForms__inputName" id="name" name="name" type="text" placeholder="Nombre del producto">
+        </div>
+        
+        <div class="productForms__price">
+            <label class="productForms__labelPrice" for="price">Precio</label>
+            <input class="productForms__inputPrice" id="price" name="price" type="number" placeholder="Precio del producto">
+        </div>
 
-        <label class="productForms__labelPrice" for="price">Precio</label>
-        <input class="productForms__inputPrice" id="price" type="number" placeholder="Precio del producto">
+        <div class="productForms__type">
+            <label for="type" class="productForms__labelTypeProduct">Tipo de producto</label>
+            <select id="type" class="productForms__inputTypeProduct" name="type">
+                <option value="">Selecciona una opcion</option>
+                <option value="glazed">Glaseado</option>
+                <option value="spark">Chispas</option>
+                <option value="filling">Relleno</option>        
+            </select>
+        </div>
 
-        <label class="productForms__status">Status</label>
+        <div class="productForms__status">
+            <label class="productForms__statusSection">Status</label>
 
-        <label class="productForms__labelTraditional">Traditional</label>
-        <input class="productForms__inputTraditional" type="checkbox">
+            <div class="productForms__statusOptions">
+                <label class="productForms__labelTraditional">
+                    Traditional
+                <input class="productForms__inputTraditional" name="status_traditional" type="checkbox">
+                </label>
 
-        <label class="productForms__labelRecent">Recent</label>
-        <input class="productForms__inputRecent" type="checkbox">
+                <label class="productForms__labelRecent">
+                    Recent
+                <input class="productForms__inputRecent" name="status_recent" type="checkbox">
+                </label>
 
-        <label class="productForms__labelNew">New</label>
-        <input class="productForms__inputNew" type="checkbox">
+                <label class="productForms__labelNew">
+                    New
+                <input class="productForms__inputNew" name="status_new" type="checkbox">
+                </label>
+            </div>
+        </div>
 
-        <label class="productForms__content">Contenido</label>
-        <label class="productForms__labelVegan">Vegano</label>
-        <input class="productForms__inputVegan" type="checkbox">
+        <div class="productForms__content">
+            <label class="productForms__contentSection">Contenido</label>
 
-        <label class="productForms__labelNoVegan">No Vegano</label>
-        <input class="productForms__inputNoVegan" type="checkbox">
+            <div class="productForms__contentOptions">
+                <label class="productForms__labelVegan">Vegan</label>
+                <input class="productForms__inputVegan" name="content_vegan" type="checkbox">
 
-        <button type="submit">Enviar</button>
+                <label class="productForms__labelNoVegan">No Vegan</label>
+                <input class="productForms__inputNoVegan" name="content_NoVegan" type="checkbox">
+            </div>
+        </div>
+
+        <button class="productForms__button" type="submit">Enviar</button>
     </form>
+
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
+
+    <script src="./script/productForms.js"></script>
 </body>
 </html>
