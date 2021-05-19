@@ -77,6 +77,18 @@
             </div>
         </div>
 
+        <div class="productForms__stars">
+            <label for="stars" class="productForms__labelStarsProduct">Cantidad de estrellas</label>
+            <select id="stars" class="productForms__inputStarsProduct" name="stars">
+                <option value="">Selecciona una opcion</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option> 
+                <option value="4">4</option>
+                <option value="5">5</option>        
+            </select>
+        </div>
+
         <!--sirve con modelviewer-->
         <!--<model-viewer class="productForms__img" src="" camera-controls auto-rotate></model-viewer>-->
         <label for="image" class="productForms__labelImage">Imagen</label>
@@ -91,6 +103,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
+    
+    <script src="./script/general.js"></script>
     <script src="./script/productForms.js"></script>
     
 </body>

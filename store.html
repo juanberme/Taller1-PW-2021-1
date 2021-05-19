@@ -38,7 +38,27 @@
         </nav>
     </div>
 
-    <section class="list"> </section>
+    <form class="filters">
+        <label for="price" class="productForms__labelPriceProduct">Rangos de precios</label>
+        <select id="price"price class="productForms__inputPriceProduct" name="price">
+            <option value="">Selecciona una opcion</option>
+            <option value="1">Entre 1000 a 3000</option>
+            <option value="2">Entre 3100 a 6000</option>
+            <option value="3">Entre 6100 a 9000</option>  
+            <option value="4">Más de 9100</option>       
+        </select>
+
+        <label for="type" class="productForms__labelTypeProduct">Tipo de producto</label>
+        <select id="type" class="productForms__inputTypeProduct" name="type">
+            <option value="">Selecciona una opcion</option>
+            <option value="glazed">Glaseado</option>
+            <option value="spark">Chispas</option>
+            <option value="filling">Relleno</option>        
+        </select>
+
+    </form>
+
+    <section class="list"></section>
     
     <footer class="final">
         <div class="final__info">
@@ -71,6 +91,13 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
+
+    <script src="./script/general.js"></script>
+    <script src="./script/store.js"></script>
 </body>
 </html>
-<script src="./script/store.js"></script>
+

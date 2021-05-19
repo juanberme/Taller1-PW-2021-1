@@ -1,16 +1,4 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyD9KoHYGh39yD3AVfw8gVeNvY0q5EXB2jE",
-    authDomain: "taller1-pw211.firebaseapp.com",
-    projectId: "taller1-pw211",
-    storageBucket: "taller1-pw211.appspot.com",
-    messagingSenderId: "252463248566",
-    appId: "1:252463248566:web:920db6220bd20f8a336217"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
-const db = firebase.firestore();
-const storage = firebase.storage();
 
 
 const productForms = document.querySelector('.productForms');
@@ -47,7 +35,9 @@ function handleSubmit(a){
         price: parseInt(productForms.price.value),
         type: productForms.type.value,
         status: [],
-        content: []
+        content: [],
+        stars: productForms.stars.value
+
     };
     if(productForms.status_traditional.checked) product.status.push('traditional');
     if(productForms.status_recent.checked) product.status.push('recent');
@@ -75,6 +65,10 @@ function handleSubmit(a){
         error += 'Debes seleccionar el tipo de producto. <br/>';
         
     } 
+
+    if(!product.stars){
+        error += 'Debes seleccionar la clasificacion. <br/>';
+    }
 
     if(error){
         productFormsError.innerHTML = error;
