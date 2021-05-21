@@ -1,0 +1,132 @@
+.productDet{
+    
+    display: flex;
+
+    &__principalImg{
+        width: 600px;
+        height: 600px;
+    }
+
+    &__title{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 42px;
+
+        color: #000000;
+    }
+
+    &__detImages{
+        width: 2000px;
+        margin-left: 3em;
+    }
+
+    &__principalImg{
+
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 20px;
+    }
+
+    &__star{
+        height: 32px;
+        width: 200px;
+        background-image: url(../resources/defaultCalification.png);
+        background-size: 100%;
+        margin-top: 1em;
+        box-sizing: border-box;
+        img {
+            object-fit: cover;
+            object-position: left;
+            height: 100%;
+            width: 50%;
+        }
+    }
+
+    &__price{
+        margin-top: 2em;
+    }
+
+    &__info{
+        margin-left: 4em;
+        margin-right: 4em;
+    }
+
+    &__description{
+        margin-top: 2em;
+    }
+
+    &__calification{
+        margin-top: 2em;
+    }
+
+    &__list{
+        margin-top: 2em;
+    }
+
+    &__buttons{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2em;
+    }
+
+    &__add{
+        background: black;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+        color: white;
+        border-radius: 10px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        border: none;
+    }
+
+    &__quantity{
+        display: block;
+    }
+
+    &__number{
+        border-color: black;
+        border: solid 4px;
+        width: 40px;
+        border: 4px solid black;
+    }
+
+    &__decrease{
+        background: #000000;
+        color: white;
+        border-radius: 10px 0px 0px 10px;
+        border: none;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 1em 0;
+        width: 50px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    &__increase{
+        background: #000000;
+        color: white;
+        border-radius: 0px 10px 10px 0px;
+        border: none;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 1em 0;
+        width: 50px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+}

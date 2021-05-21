@@ -56,6 +56,14 @@
             <option value="filling">Relleno</option>        
         </select>
 
+        <label for="order" class="productForms__label">Ordenar</label>
+        <select id="order" class="productForms__input" name="order">
+            <option value="">Ordenar</option>
+            <option value="price_asc">Precio(Mayor precio al menor precio)</option>
+            <option value="price_desc">Precio (Menor precio al mayor precio)</option>
+            <option value="alpha">Alfabeticamente (A - Z)</option>   
+            <option value="createdAt">Más recientes</option>        
+        </select>
     </form>
 
     <section class="list"></section>
@@ -95,9 +103,12 @@
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
 
     <script src="./script/general.js"></script>
     <script src="./script/store.js"></script>
+    <script src="./script/authModal.js"></script>
+ 
 </body>
 </html>
 

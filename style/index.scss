@@ -21,6 +21,7 @@ h6{
     color: #C4C4C4;
 }
 
+
 .menu{
     display: flex;
     justify-content: space-between;
@@ -107,5 +108,7 @@ h6{
 @import 'product';
 @import 'productForms';
 @import 'general';
+@import 'modal';
+@import 'productDetails';
 
 

@@ -36,8 +36,9 @@ function handleSubmit(a){
         type: productForms.type.value,
         status: [],
         content: [],
-        stars: productForms.stars.value
-
+        stars: productForms.stars.value,
+        createdAt: new Date(Date.now()),
+        //id: docRef.id
     };
     if(productForms.status_traditional.checked) product.status.push('traditional');
     if(productForms.status_recent.checked) product.status.push('recent');
