@@ -1,46 +1,42 @@
-/*const btnOpenModal = document.querySelector('.bnt-open-modal');
-const modal = document.querySelector('.modal');
-const modalContent = document.querySelector('.modalcontent');
-const modalBackdrop = document.querySelector('.modalbackdrop');
-const modalClose = document.querySelector('.modal__close');
 
-function handleModalAppear () {
-  modal.style.opacity = 1;
-  modalContent.style.transform = 'translate(0px, 0px)';
-}
-
-function handleOpenModal () {
-  modal.style.display = 'block';
-  document.body.style.overflow = 'hidden';
-  setTimeout(handleModalAppear, 1);
-}
-
-function handleCloseModal () {
-  modal.style.opacity = 0;
-  modalContent.style.transform = 'translate(0px, -500px)';
-  document.body.style.overflow = 'hidden scroll';
-  setTimeout(function () {
-    modal.style.display = 'none';
-  }, 500);
-}
-
-modalBackdrop.addEventListener('click', handleCloseModal);
-modalClose.addEventListener('click', handleCloseModal);*/
-
-//btnOpenModal.addEventListener('click', handleOpenModal);
-
-//
 const list = document.querySelector('.list');
 const filters = document.querySelector('.filters');
+
+const hideBtn = document.querySelector('.headerStore__button');
+let isHide = true
+
+hideBtn.addEventListener('click', function(){
+    console.log('entro');
+    if(isHide == !true){
+        filters.classList.add('hidden');
+        console.log(isHide);
+        isHide =!true;
+    }else{
+        filters.classList.remove('hidden');
+        console.log(isHide);
+        isHide =!true;
+    }
+});
+
+console.log(loggedUser);
+let user = loggedUser;
+
+
+setTimeout(function(){
+    console.log(loggedUser);
+}, 2000);
+
 
 const handleCollectionResult = (querySnapshot) => {
     list.innerHTML = '';
     querySnapshot.forEach((doc) => {
         const data =  doc.data();
+        
         // doc.data() is never undefined for query doc snapshots
         //console.log(doc.id, " => ", data);
         const product = document.createElement('article');
         let img = data.images[0]?.url;
+
         if(!img){
             img = './resources/placeholder.jpeg'
         }
@@ -64,16 +60,50 @@ const handleCollectionResult = (querySnapshot) => {
                     </div>
             </div>
             <div class="product__info">
-                <input type="button" value="Ver más" class="product__addBtn">
+                <input type="button" value="Agregar" class="product__addBtn hidden showLoggedIn">
                 <h4 class="product__price">$ ${data.price}</h4>
             </div>
+            <button class="hidden showLoggedAdmin">delete</button>
         ` ;
         product.classList.add('product'); 
         //product.setAttribute('href', '#');
         list.appendChild(product);
         //console.log();
+        const addBtn = product.querySelector('.product__addBtn');
+        addBtn.addEventListener('click', function(){
+            addToMyCart({
+                ...data,
+                id: doc.id,
+            });
+            
+            
+            //console.log(cart.length, cartBtnNumber);
+        });
     });
 }
+
+const headerStore = document.querySelector('.headerStore');
+
+//para los botones de iniciar y cerrar sesion
+const authButtons = document.querySelector('.authButtons');
+
+authButtons.innerHTML=`
+    <h2 class="product__infoData hidden">Hola, </h2>
+    <button class="authButtons__login hideLoggedIn">Ingresar</button>
+    <button class="authButtons__logout showLoggedIn">Cerrar sesión</button>
+`;
+  const authLogin = authButtons.querySelector('.authButtons__login');
+  const authLogout = authButtons.querySelector('.authButtons__logout');
+  
+  authLogin.addEventListener('click', function(){
+    authModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    setTimeout(handleModalAppear, 1);
+});
+
+authLogout.addEventListener('click',function(){
+    firebase.auth().signOut();
+});
 
 //para agregar los filtros
 filters.addEventListener('change', function (){
@@ -102,6 +132,30 @@ filters.addEventListener('change', function (){
             case '4':
                 productsCollection = productsCollection.where('price', '>=', 9100);
                 break;
+        }
+    }
+
+    if(filters.stars.value){
+        switch(filters.stars.value){
+            case '1':
+                productsCollection = productsCollection.where('stars', '==', '1');
+                break;
+
+            case '2':
+                productsCollection = productsCollection.where('stars', '==', '2');
+                break;
+
+            case '3':
+                productsCollection = productsCollection.where('stars', '==', '3');
+                break;
+
+            case '4':
+                productsCollection = productsCollection.where('stars', '==', '4');
+                break;
+
+            case '5':
+                productsCollection = productsCollection.where('stars', '==', '5');
+                break;    
         }
     }
 

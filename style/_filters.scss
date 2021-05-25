@@ -1,0 +1,25 @@
+.filters{
+
+    background: #6C7CC7;
+    padding: 2em 1em;
+
+    &__label{
+        color: #FFFFFF;
+        display: block;
+    }
+
+    &__input{
+        padding: 0.5em 0.8em;
+        border-radius: 12px;
+        border: 4px solid #7B8CDE;
+        color: #7B8CDE;
+        background: #FFFFFF;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    
+}

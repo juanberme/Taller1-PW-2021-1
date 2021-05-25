@@ -9,7 +9,20 @@
 </head>
 <body>
 
-    <header class="menu">
+    <header>
+        <div class="menu">
+            <img class="header__logoAmplio" src="./resources/LogoSweetMood.png">
+            <img class="header__logoCorto" src="./resources/logoNuevo.png">
+            <nav class="header">
+                <ul class="header__options">
+                    <li><a class="header__options" href="./index.html">Inicio</a></li>
+                    <li><a class="header__options actual" href="./store.html">Productos</a></li>
+                    <li><a class="header__options" href="./cart.html">Canasta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--<header class="menu">
         <div class="logo">
             <img class="logoAmplio" src="./resources/LogoSweetMood.png">
             <img class="logoCorto" src="./resources/logoNuevo.png">
@@ -30,8 +43,10 @@
             <h6>Productos</h6>
             <h6>Canasta</h6>
         </nav>
-    </div>
-
+    </div>-->
+    <nav>
+        <a class="cartBtn" href="./cart.html">Cart <span></span></a>
+    </nav>
     <section class="productDet">
         
     </section>
@@ -44,4 +59,5 @@
     <script src="./script/general.js"></script>
     <script src="./script/productDetails.js"></script>
     <script src="./script/authModal.js"></script>
+    <script src="./script/authUtils.js"></script>
 </html>

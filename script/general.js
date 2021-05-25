@@ -12,14 +12,75 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const storage = firebase.storage();
 
+let loggedUser = null;
+
+setTimeout(function(){
+  console.log(loggedUser);
+}, 2000);
+
+const setLoggedUser = (info, id) =>{
+  loggedUser = info;
+  loggedUser.uid = id;
+  //console.log(doc.data());
+  userAuthChanged(true);
+  if(typeof checkProductFormAdmin !== 'undefined') checkProductFormAdmin();
+}
+
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       console.log('onAuthStateChanged', user);
       db.collection('users').doc(user.uid).get().then(function(doc){
-        console.log(doc.data());
+        if(!doc.data()) return;
+        setLoggedUser(doc.data(), user.uid);
       });
+      getMyCart(user.uid);
     } else {
+      loggedUser = null;
+      cart = [];
       // User is signed out
       // ...
+      userAuthChanged(false);
     }
+});
+  
+
+let cart = [];
+const cartBtnNumber = document.querySelector('.cartBtn span');
+
+//nos permite subir la info a una seccion llamada cart
+const CART_COLLECTION = db.collection('cart');
+
+const ORDERS_COLLECTION = db.collection('orders');
+//para agregar a cart un nuevo producto
+const addToMyCart = (product) =>{
+  cart.push(product);
+  CART_COLLECTION.doc(loggedUser.uid).set({
+    cart,
   });
+  cartBtnNumber.innerText = cart.length;
+};
+
+let renderCart = null;
+
+const getMyCart = (uid)=>{
+  CART_COLLECTION.doc(uid).get().then(snapShot => {
+    const data = snapShot.data();
+    console.log(data);
+    if(!data) return;
+    if(cartBtnNumber) cartBtnNumber.innerText = data.cart.length;
+    cart = data.cart;
+    console.log(renderCart);
+    if(renderCart) renderCart();
+  });
+}
+
+
+/*
+const cartFromLS = localStorage.getItem('store__cart');
+if(cartFromLS){
+    cart = JSON.parse(cartFromLS);
+    if(cartBtnNumber){
+      cartBtnNumber.innerText = cart.length;
+    }
+}
+*/

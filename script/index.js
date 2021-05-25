@@ -8,7 +8,7 @@ function handleAppearNewMenu(){
         option2.style.display = 'none';
     };
 }
-menuPic.addEventListener('click', handleAppearNewMenu);
+//menuPic.addEventListener('click', handleAppearNewMenu);
 
 
 var counter = 1;

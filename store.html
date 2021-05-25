@@ -7,10 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Mood</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Yeseva+One&display=swap" rel="stylesheet">  
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
-    <header class="menu">
+    
+    <header>
+        <div class="menu">
+            <img class="header__logoAmplio" src="./resources/LogoSweetMood.png">
+            <img class="header__logoCorto" src="./resources/logoNuevo.png">
+            <nav class="header">
+                <ul class="header__options">
+                    <li><a class="header__options" href="./index.html">Inicio</a></li>
+                    <li><a class="header__options actual" href="./store.html">Productos</a></li>
+                    <li><a class="header__options" href="./cart.html">Canasta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--<header class="menu">
         <div class="logo">
             <img class="logoAmplio" src="./resources/LogoSweetMood.png">
             <img class="logoCorto" src="./resources/logoNuevo.png">
@@ -22,51 +35,85 @@
             <h6>Canasta</h6>
         </nav>
         <img class="menuPic" src="./resources/menu.png">
-    </header>
+    </header>-->
 
-    <section class="product__filter">
-        <h2>X resultados</h2>
-        <h2>Ordenar/filtrar</h2>
-    </section>
+    
 
-    <div class="newMenu">
+    <!--<div class="newMenu">
         <nav class="option2">
             <h6>Inicio</h6>
             <h6>Nosotros</h6>
             <h6>Productos</h6>
             <h6>Canasta</h6>
         </nav>
+    </div>-->
+
+
+    <section class="headerStore">
+        <div class="headerStore__box">
+            <button class="headerStore__button">^</button>
+            <h2 class="headerStore__infoData">Ordenar/filtrar</h2>
+        </div>
+        <div class="product__sesion">
+            <section class="authButtons"></section>
+        </div>
+    </section>
+
+    <nav>
+        <a class="cartBtn" href="./cart.html">Cart <span></span></a>
+    </nav>
+
+    <div class="store__interace">
+        <form class="filters hidden">
+            <div>
+                <label for="price" class="filters__label">Rangos de precios</label>
+                <select id="price"price class="filters__input" name="price">
+                    <option value="">Selecciona una opcion</option>
+                    <option value="1">Entre 1000 a 3000</option>
+                    <option value="2">Entre 3100 a 6000</option>
+                    <option value="3">Entre 6100 a 9000</option>  
+                    <option value="4">Más de 9100</option>       
+                </select>
+            </div>
+
+            <div>
+                <label for="stars" class="filters__label">Cantidad de estrellas</label>
+                <select id="stars"price class="filters__input" name="stars">
+                    <option value="">Selecciona una opcion</option>
+                    <option value="1">1 Estrella</option>
+                    <option value="2">2 Estrellas</option>
+                    <option value="3">3 Estrellas</option>  
+                    <option value="4">4 Estrellas</option>  
+                    <option value="5">5 Estrellas</option>       
+                </select>
+            </div>
+            
+                
+            
+            <label for="type" class="filters__label">Tipo de producto</label>
+            <select id="type" class="filters__input" name="type">
+                <option value="">Tipo de donut</option>
+                <option value="glazed">Glaseado</option>
+                <option value="spark">Chispas</option>
+                <option value="filling">Relleno</option>        
+            </select>
+    
+            <label for="order" class="filters__label">Ordenar</label>
+            <select id="order" class="filters__input" name="order">
+                <option value="">Ordenar</option>
+                <option value="price_asc">Precio(Mayor precio al menor precio)</option>
+                <option value="price_desc">Precio (Menor precio al mayor precio)</option>
+                <option value="alpha">Alfabeticamente (A - Z)</option>   
+                <option value="createdAt">Más recientes</option>        
+            </select>
+        </form>
+
+        <section class="list"></section>
     </div>
+    
 
-    <form class="filters">
-        <label for="price" class="productForms__labelPriceProduct">Rangos de precios</label>
-        <select id="price"price class="productForms__inputPriceProduct" name="price">
-            <option value="">Selecciona una opcion</option>
-            <option value="1">Entre 1000 a 3000</option>
-            <option value="2">Entre 3100 a 6000</option>
-            <option value="3">Entre 6100 a 9000</option>  
-            <option value="4">Más de 9100</option>       
-        </select>
-
-        <label for="type" class="productForms__labelTypeProduct">Tipo de producto</label>
-        <select id="type" class="productForms__inputTypeProduct" name="type">
-            <option value="">Selecciona una opcion</option>
-            <option value="glazed">Glaseado</option>
-            <option value="spark">Chispas</option>
-            <option value="filling">Relleno</option>        
-        </select>
-
-        <label for="order" class="productForms__label">Ordenar</label>
-        <select id="order" class="productForms__input" name="order">
-            <option value="">Ordenar</option>
-            <option value="price_asc">Precio(Mayor precio al menor precio)</option>
-            <option value="price_desc">Precio (Menor precio al mayor precio)</option>
-            <option value="alpha">Alfabeticamente (A - Z)</option>   
-            <option value="createdAt">Más recientes</option>        
-        </select>
-    </form>
-
-    <section class="list"></section>
+    
+   <!--////////-->
     
     <footer class="final">
         <div class="final__info">
@@ -108,6 +155,7 @@
     <script src="./script/general.js"></script>
     <script src="./script/store.js"></script>
     <script src="./script/authModal.js"></script>
+    <script src="./script/authUtils.js"></script>
  
 </body>
 </html>

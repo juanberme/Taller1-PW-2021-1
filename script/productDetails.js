@@ -33,11 +33,7 @@ db.collection('products')
         </div>
         <h2 class="productDet__price">$ ${data.price} COP</h2>
         <p class="productDet__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad</p>
-        <ul class="productDet__list">
-            <li>Entregas en 2 horas o menos</li>
-            <li>Entregas a la puerta de tu casa</li>
-            <li>Cumplimos con los protocolos de bioseguridad</li>
-        </ul>
+        
         <div class="productDet__buttons">
             <button class="productDet__add">Agregar</button>
             <div class="productDet__quantity">
@@ -48,7 +44,26 @@ db.collection('products')
         </div>
     </div>
         `
+});
+
+//para agregar al carrito desde productDetail
+const addBtn = productDetails.querySelector('.productDet__add');
+
+    addBtn.addEventListener('click', function(){
+        if(loggedUser){
+            console.log(hola);
+            addToMyCart({
+            ...data,
+            id: doc.id,
+        });
+        //localStorage.setItem('store__cart', JSON.stringify(cart));
+        } else{
+            handleGoToLogin();
+        }
+        console.log(cart.length, cartBtnNumber);
     });
+
+
 
 
 //por si no encuentra una página, lo redirige a esta

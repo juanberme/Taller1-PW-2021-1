@@ -9,6 +9,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Yeseva+One&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <header>
+        <div class="menu">
+            <img class="header__logoAmplio" src="./resources/LogoSweetMood.png">
+            <img class="header__logoCorto" src="./resources/logoNuevo.png">
+            <nav class="header">
+                <ul class="header__options">
+                    <li><a class="header__options" href="./index.html">Inicio</a></li>
+                    <li><a class="header__options actual" href="./store.html">Productos</a></li>
+                    <li><a class="header__options" href="./cart.html">Canasta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="options">
+        <button class="options__btn">Órdenes</button>
+        <button class="options__btn">Agregar producto</button>
+        <button class="options__btn">Quitar productos</button>
+    </section>
+
+    <!--///////////-->
+
+    <section class="orders">
+        <!--<div>
+            <h2 class="orders__name">Nombre de usuario</h2>
+                <section class="orders__list">
+                    <img class="orders__img" src="./resources/placeholder.jpeg">
+                    <div class="orders__info">
+                        <h2 class="orders__productName">Nombre del producto</h2> 
+                        <div class="orders__numbers">
+                            <h2 class="orders__productPrice">$XXXXXX</h2> 
+                            <p class="orders__quantity">X2</p>
+                        </div>
+                    </div>
+                </section>
+        </div>-->
+    </section>
+
+    <!--///////////-->
 
     <p class="loadingMsg hidden">
         Loading...
@@ -22,21 +61,23 @@
         El producto se ha agregado correctamente
     </p>
 
+    <!--///////////-->
+
     <form class="productForms">
        
         <div class="productForms__name">
-            <label class="productForms__labelName" for="name">Nombre</label>
-            <input class="productForms__inputName" id="name" name="name" type="text" placeholder="Nombre del producto">
+            <label class="productForms__label" for="name">Nombre</label>
+            <input class="productForms__input" id="name" name="name" type="text" placeholder="Nombre del producto">
         </div>
         
         <div class="productForms__price">
-            <label class="productForms__labelPrice" for="price">Precio</label>
-            <input class="productForms__inputPrice" id="price" name="price" type="number" placeholder="Precio del producto">
+            <label class="productForms__label" for="price">Precio</label>
+            <input class="productForms__input" id="price" name="price" type="number" placeholder="Precio del producto">
         </div>
 
         <div class="productForms__type">
-            <label for="type" class="productForms__labelTypeProduct">Tipo de producto</label>
-            <select id="type" class="productForms__inputTypeProduct" name="type">
+            <label for="type" class="productForms__label">Tipo de producto</label>
+            <select id="type" class="productForms__input" name="type">
                 <option value="">Selecciona una opcion</option>
                 <option value="glazed">Glaseado</option>
                 <option value="spark">Chispas</option>
@@ -45,41 +86,42 @@
         </div>
 
         <div class="productForms__status">
-            <label class="productForms__statusSection">Status</label>
+            <label class="productForms__label">Status</label>
 
             <div class="productForms__statusOptions">
-                <label class="productForms__labelTraditional">
+                <label class="productForms__label">
                     Traditional
-                <input class="productForms__inputTraditional" name="status_traditional" type="checkbox">
+                <input class="productForms__checkbox" name="status_traditional" type="checkbox">
                 </label>
 
-                <label class="productForms__labelRecent">
+                <label class="productForms__label">
                     Recent
-                <input class="productForms__inputRecent" name="status_recent" type="checkbox">
+                <input class="productForms__checkbox" name="status_recent" type="checkbox">
                 </label>
 
-                <label class="productForms__labelNew">
+                <label class="productForms__label">
                     New
-                <input class="productForms__inputNew" name="status_new" type="checkbox">
+                <input class="productForms__checkbox" name="status_new" type="checkbox">
                 </label>
             </div>
         </div>
 
         <div class="productForms__content">
-            <label class="productForms__contentSection">Contenido</label>
+            <label class="productForms__label">Contenido</label>
 
             <div class="productForms__contentOptions">
-                <label class="productForms__labelVegan">Vegan</label>
-                <input class="productForms__inputVegan" name="content_vegan" type="checkbox">
-
-                <label class="productForms__labelNoVegan">No Vegan</label>
-                <input class="productForms__inputNoVegan" name="content_NoVegan" type="checkbox">
+                <label class="productForms__label">Vegan
+                    <input class="productForms__checkbox" name="content_vegan" type="checkbox">
+                </label>
+                <label class="productForms__label">No Vegan
+                    <input class="productForms__checkbox" name="content_NoVegan" type="checkbox">
+                </label>
             </div>
         </div>
 
         <div class="productForms__stars">
-            <label for="stars" class="productForms__labelStarsProduct">Cantidad de estrellas</label>
-            <select id="stars" class="productForms__inputStarsProduct" name="stars">
+            <label for="stars" class="productForms__label">Cantidad de estrellas</label>
+            <select id="stars" class="productForms__input" name="stars">
                 <option value="">Selecciona una opcion</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -89,13 +131,13 @@
             </select>
         </div>
 
-        <!--sirve con modelviewer-->
-        <!--<model-viewer class="productForms__img" src="" camera-controls auto-rotate></model-viewer>-->
-        <label for="image" class="productForms__labelImage">Imagen</label>
         <div class="productForms__images">
-            <!--<img class="productForms__img hidden" src=""/>-->
+            <label for="image" class="productForms__label">Imagen
+                <input class="productForms__file" name="image" id="image" type="file">
+            </label>
         </div>
-        <input class="productForms__inputImage" name="image" id="image" type="file">
+        
+        
 
         <button class="productForms__button" type="submit">Enviar</button>
     </form>
@@ -103,7 +145,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
     
+    <script src="./script/authUtils.js"></script>
     <script src="./script/general.js"></script>
     <script src="./script/productForms.js"></script>
     

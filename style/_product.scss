@@ -1,3 +1,45 @@
+.headerStore{
+    background: #7B8CDE;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+  
+    &__box{
+      display: flex;
+    }
+
+    &__infoData{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 1em;
+        display: flex;
+        align-items: center;
+    }
+
+
+    &__button{
+        padding: 0.8em 1em;
+        border-radius: 10px;
+        border: none;
+        background: #FFFFFF;
+        color: #7B8CDE;
+    }
+
+    &__infoData{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      color: #FFFFFF;
+    }
+  
+    &__sesion{
+      display: flex;
+    }
+  }
+
 .list{
     display: grid;
     max-width: calc(330px * 3 + 60px);
@@ -8,12 +50,43 @@
     margin: 0 auto 2em;
 }
 
+.authButtons{
+    &__login{
+        color: #7B8CDE;
+        background: #FFFFFF;
+        padding: 0.2em 1em;
+        border: none;
+        border-radius: 4px;
+        margin-left: 1em;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &__logout{
+        color: #7B8CDE;
+        background: #FFFFFF;
+        padding: 0.2em 1em;
+        border: none;
+        border-radius: 4px;
+        margin-left: 1em;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+    }
+}
+
 .product{
 
-    input[type=number]::-webkit-inner-spin-button, 
+    /*input[type=number]::-webkit-inner-spin-button, 
         input[type=number]::-webkit-outer-spin-button { 
         -webkit-appearance: none; 
-    }
+    }*/
+
     width: 320px;
 
     &__information{
@@ -34,6 +107,8 @@
         text-decoration:none;
         display: block;
     }
+
+    
 
     &__calification{
         height: 23px;
@@ -164,7 +239,9 @@
         background-repeat: no-repeat;
         background-position: center;
         height: 300px;
-    }
+    }  
+
+    
 }
 
 .image{

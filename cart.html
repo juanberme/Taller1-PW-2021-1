@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="Stylesheet" href="./style/index.css">
+</head>
+<body>
+    <main class="checkout">
+        <section class="checkout__list cartList"></section>
+        <section class="checkout__summary">
+            <h3 class="checkout__total">Total: $<span></span></h3>
+            <form class="checkout__form">
+                <div class="field">
+                    <label class="field__label" for="ccnumber">Número de la tarjeta de credito</label>
+                    <input class="field__input" id="ccnumber" name="ccnumber" type="number" placeholder="">
+                </div>
+                <div class="field">
+                    <label class="field__label" for="address">Dirección de entregar</label>
+                    <input class="field__input" id="address" name="address" type="text" placeholder="">
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    
+
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
+
+    <script src="./script/general.js"></script>
+    <script src="./script/cart.js"></script>
+    <script src="./script/authUtils.js"></script>
+</body>
+</html>
