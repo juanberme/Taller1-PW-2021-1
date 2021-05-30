@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,28 @@
     <title>Document</title>
     <link rel="Stylesheet" href="./style/index.css">
 </head>
+
 <body>
 
     <header>
-        <div class="menu">
-            <img class="header__logoAmplio" src="./resources/LogoSweetMood.png">
-            <img class="header__logoCorto" src="./resources/logoNuevo.png">
-            <nav class="header">
-                <ul class="header__options">
-                    <li><a class="header__options" href="./index.html">Inicio</a></li>
-                    <li><a class="header__options actual" href="./store.html">Productos</a></li>
-                    <li><a class="header__options" href="./cart.html">Canasta</a></li>
-                </ul>
-            </nav>
-        </div>
+        <section class="menuSection">
+            <div class="menuSection__sec1">
+                <img class="menuSection__logoAmplio" src="./resources/LogoSweetMood.png">
+                <img class="menuSection__logoCorto" src="./resources/logoNuevo.png">
+            </div>
+            <div class="menuSection__sec2">
+                <a class="menuSection__option" href="./index.html">Inicio</a>
+                <a class="menuSection__option actual" href="./store.html">Productos</a>
+                <div>
+                    <a href="./cart.html"><img class="menuSection__menuCart" src="./resources/cart.png"></a>
+                    <a class="cartBtn hidden"> <span></span></a>
+                </div>
+                <a><img class="menuSection__menuUser" src="./resources/user.png"></a>
+                <a class="menuSection__logOut hidden">Cerrar sesión</a>
+            </div>
+        </section>
     </header>
+    
     <!--<header class="menu">
         <div class="logo">
             <img class="logoAmplio" src="./resources/LogoSweetMood.png">
@@ -48,7 +56,33 @@
         <a class="cartBtn" href="./cart.html">Cart <span></span></a>
     </nav>
     <section class="productDet">
-        
+
+        <div class="productDet__detImages">
+            <img class="productDet__principalImg" src="">
+        </div>
+
+        <div class="productDet__info">
+            <h2 class="productDet__title"></h2>
+            <div class="productDet__calification">
+                <div class="productDet__star">
+                    <img src="resources/calification.png">
+                </div>
+                <h4 class="productDet__rate"></h4>
+            </div>
+            <h2 class="productDet__price"></h2>
+            <p class="productDet__description"></p>
+
+            <div class="productDet__buttons">
+                <button class="productDet__add">Agregar</button>
+                <div class="productDet__quantity">
+                    <button class="productDet__decrease">-</button>
+                    <input type="number" class="productDet__number">
+                    <button class="productDet__increase">+</button>
+                </div>
+            </div>
+        </div>
+
+
     </section>
 
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
@@ -60,4 +94,3 @@
     <script src="./script/productDetails.js"></script>
     <script src="./script/authModal.js"></script>
     <script src="./script/authUtils.js"></script>
-</html>

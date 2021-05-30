@@ -1,12 +1,20 @@
-
 const list = document.querySelector('.list');
 const filters = document.querySelector('.filters');
+const adminBtn = document.querySelector('.headerStore__admin');
+
+console.log(loggedUser);
+let user = loggedUser;
+
+setTimeout(function(){
+    console.log(loggedUser);
+}, 2000);
+
 
 const hideBtn = document.querySelector('.headerStore__button');
 let isHide = true
 
 hideBtn.addEventListener('click', function(){
-    console.log('entro');
+    console.log(loggedUser.name);
     if(isHide == !true){
         filters.classList.add('hidden');
         console.log(isHide);
@@ -18,14 +26,17 @@ hideBtn.addEventListener('click', function(){
     }
 });
 
-console.log(loggedUser);
-let user = loggedUser;
+const checkProductFormAdmin = () => {
+    if(!loggedUser || !loggedUser.admin) {
+      adminBtn.classList.add('hidden');
+    }else{
+        adminBtn.classList.remove('hidden');
+    }
+}
 
-
-setTimeout(function(){
-    console.log(loggedUser);
-}, 2000);
-
+adminBtn.addEventListener('click', ()=>{
+    location.href="./productForms.html";
+});
 
 const handleCollectionResult = (querySnapshot) => {
     list.innerHTML = '';
@@ -60,7 +71,7 @@ const handleCollectionResult = (querySnapshot) => {
                     </div>
             </div>
             <div class="product__info">
-                <input type="button" value="Agregar" class="product__addBtn hidden showLoggedIn">
+                <input type="button" value="Agregar" class="product__addBtn">
                 <h4 class="product__price">$ ${data.price}</h4>
             </div>
             <button class="hidden showLoggedAdmin">delete</button>
@@ -70,6 +81,25 @@ const handleCollectionResult = (querySnapshot) => {
         list.appendChild(product);
         //console.log();
         const addBtn = product.querySelector('.product__addBtn');
+
+        let increaseAmount = product.querySelector('.product__increase');
+        let decreaseAmount = product.querySelector('.product__decrease');
+        let numberAmount = product.querySelector('.product__number');
+        if(product !== null){
+            increaseAmount.addEventListener('click', function() {
+                numberAmount.value++;
+                console.log(numberAmount.value);
+            });
+    
+            decreaseAmount.addEventListener('click', function(){
+                numberAmount.value--;
+                if(numberAmount.value < 0){
+                    numberAmount.value = 0;
+                }
+            });
+        }
+        
+
         addBtn.addEventListener('click', function(){
             addToMyCart({
                 ...data,
@@ -82,28 +112,17 @@ const handleCollectionResult = (querySnapshot) => {
     });
 }
 
-const headerStore = document.querySelector('.headerStore');
 
-//para los botones de iniciar y cerrar sesion
-const authButtons = document.querySelector('.authButtons');
+/*const headerStore = document.querySelector('.headerStore');
+if(loggedUser.name !== null){
+    nombreUsuario.innerHTML = `
+<h2 class="headerStore__loggedName">Hola, ${loggedUser.name}</h2>`
+}*/
 
-authButtons.innerHTML=`
-    <h2 class="product__infoData hidden">Hola, </h2>
-    <button class="authButtons__login hideLoggedIn">Ingresar</button>
-    <button class="authButtons__logout showLoggedIn">Cerrar sesión</button>
-`;
-  const authLogin = authButtons.querySelector('.authButtons__login');
-  const authLogout = authButtons.querySelector('.authButtons__logout');
-  
-  authLogin.addEventListener('click', function(){
-    authModal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    setTimeout(handleModalAppear, 1);
-});
 
-authLogout.addEventListener('click',function(){
-    firebase.auth().signOut();
-});
+//para agregar el nombre de usuario
+const nombreUsuario = document.querySelector('.headerStore__username');
+
 
 //para agregar los filtros
 filters.addEventListener('change', function (){

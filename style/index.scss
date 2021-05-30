@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.menu{
+/*.menu{
     margin: 0 auto;
     margin-right: 4em;
     margin-left: 4em;
@@ -48,14 +48,74 @@ nav ul li a::before{
 
 nav ul li a:hover:before{
     width: 100%;
-}
+}*/
 
 .logoAmplio{
-    float: left;
-    padding: 8px;
+    padding-left: 1em;
 }
 
-.header{
+.menuSection__sec2{
+    display: flex;
+    align-items: center;
+    padding-right: 2em;
+
+    img{
+        width: 32px;
+        height: 32px;
+        margin: 0;
+        padding-left: 3em;
+    }
+
+}
+
+.menuSection{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0em;
+
+    &__option{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+        color: #C4C4C4;
+        padding-left: 3em;
+    }
+
+    &__menuSection{
+        padding-left: 1em;
+    }
+
+    &__option:hover{
+        color: #7B8CDE;
+    }
+
+    &__menuCart:hover{
+        content: url('../resources/cartSelect.png');
+        padding-left: 3em;
+    }
+
+    &__logOut{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+        color: #C4C4C4;
+        padding-left: 3em;
+    }
+
+    &__logOut:hover{
+        color: #7B8CDE;
+    }
+
+    &__menuUser:hover{
+        content: url('../resources/userSelect.png');
+    }
+}
+
+/*.header{
     background: white;
 
     &__cartImg{
@@ -79,7 +139,7 @@ nav ul li a:hover:before{
     &__menu{
         
     }
-}
+}*/
 
 .actual{
     color: #7B8CDE;
@@ -97,11 +157,24 @@ h1{
     font-size: 48px;
 }
 
+h2{
+    font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+}
+
 h6{
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     color: #C4C4C4;
 }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 
 
 /*.menu{
@@ -194,5 +267,6 @@ h6{
 @import 'productDetails';
 @import 'checkout';
 @import 'filters';
+@import 'cart';
 
 

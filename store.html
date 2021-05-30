@@ -11,17 +11,22 @@
 <body>
     
     <header>
-        <div class="menu">
-            <img class="header__logoAmplio" src="./resources/LogoSweetMood.png">
-            <img class="header__logoCorto" src="./resources/logoNuevo.png">
-            <nav class="header">
-                <ul class="header__options">
-                    <li><a class="header__options" href="./index.html">Inicio</a></li>
-                    <li><a class="header__options actual" href="./store.html">Productos</a></li>
-                    <li><a class="header__options" href="./cart.html">Canasta</a></li>
-                </ul>
-            </nav>
-        </div>
+        <section class="menuSection">
+            <div class="menuSection__sec1">
+                <img class="menuSection__logoAmplio" src="./resources/LogoSweetMood.png">
+                <img class="menuSection__logoCorto" src="./resources/logoNuevo.png">
+            </div>
+            <div class="menuSection__sec2">
+                <a class="menuSection__option" href="./index.html">Inicio</a>
+                <a class="menuSection__option actual" href="./store.html">Productos</a>
+                <div>
+                    <a href="./cart.html"><img class="menuSection__menuCart" src="./resources/cart.png"></a>
+                    <a class="cartBtn hidden"> <span></span></a>
+                </div>
+                <a><img class="menuSection__menuUser" src="./resources/user.png"></a>
+                <a class="menuSection__logOut hidden">Cerrar sesión</a>
+            </div>
+        </section>
     </header>
     <!--<header class="menu">
         <div class="logo">
@@ -51,16 +56,19 @@
 
     <section class="headerStore">
         <div class="headerStore__box">
-            <button class="headerStore__button">^</button>
-            <h2 class="headerStore__infoData">Ordenar/filtrar</h2>
+            <div class="headerStore__filters" >
+                <img class="headerStore__button" src="./resources/filtro.png">
+                <h2 class="headerStore__infoData">Ordenar/filtrar</h2>
+            </div>
+            <button class="headerStore__admin">Administador</button>
         </div>
-        <div class="product__sesion">
-            <section class="authButtons"></section>
+        <div class="headerStore__username">
+            
         </div>
     </section>
 
     <nav>
-        <a class="cartBtn" href="./cart.html">Cart <span></span></a>
+        
     </nav>
 
     <div class="store__interace">

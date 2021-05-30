@@ -18,13 +18,19 @@
         align-items: center;
     }
 
+    &__loggedName{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+
+        color: #FFFFFF;
+    }
+
 
     &__button{
-        padding: 0.8em 1em;
-        border-radius: 10px;
-        border: none;
-        background: #FFFFFF;
-        color: #7B8CDE;
+        width: 32px;
+        height: 32px;
     }
 
     &__infoData{
@@ -38,6 +44,38 @@
     &__sesion{
       display: flex;
     }
+
+    &__filters{
+        display: flex;
+    }
+
+    &__admin{
+        background: #ffffff;
+        color: #7B8CDE;
+        padding: 0em 1em;
+        border: none;
+        border-radius: 5px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+    }
+  }
+
+  .cartBtn{
+    position: absolute;
+    background: #6C7CC7;
+    color: #FFFFFF;
+    padding: 0.3em 0.6em;
+    border-radius: 100%;
+    top: 20px;
+    right: 200px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
   }
 
 .list{
@@ -196,6 +234,7 @@
         height: 3em;
         box-sizing: border-box;
         border: 4px solid black;
+        text-align: center;
 
         font-family: Roboto;
         font-style: normal;

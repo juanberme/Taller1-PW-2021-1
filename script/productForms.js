@@ -5,93 +5,24 @@ const productFormsLoading = document.querySelector('.loadingMsg');
 const productFormsError = document.querySelector('.errorMsg');
 const productFormsImages = document.querySelector('.productForms__images');
 const orders = document.querySelector('.orders');
+const ordersBtn = document.querySelector('.adminBtn__orders');
+const addBtn = document.querySelector('.adminBtn__add');
+const deleteBtn = document.querySelector('.adminBtn__delete');
+
+//botones de las opciones
+ordersBtn.addEventListener('click', ()=>{
+    productForms.classList.add('hidden');
+});
+
+addBtn.addEventListener('click', ()=>{
+    productForms.classList.remove('hidden');
+});
+
+deleteBtn.addEventListener('click', ()=>{
+    productForms.classList.add('hidden');
+});
 
 const imageFiles = [];
-
-//poder ver el pedido del user
-
-/*const handleCollectionResult = (querySnapshot) => {
-    list.innerHTML = '';
-    querySnapshot.forEach((doc) => {
-        const data =  doc.data();
-        
-        // doc.data() is never undefined for query doc snapshots
-        //console.log(doc.id, " => ", data);
-        const product = document.createElement('article');
-        let img = data.images[0]?.url;
-
-        if(!img){
-            img = './resources/placeholder.jpeg'
-        }
-        product.innerHTML =`
-            <div class="product__contentImage">
-                    <div class="image">
-                        <img class="product__img" src="${img}">
-                        <div class="product__information">
-                            <div class="product__data">
-                                <a class="product__title" href="./productDetails.html?id=${doc.id}&name=${data.name}">${data.name}</a>
-                                <div class="product__calification">
-                                    <img src="resources/calification.png" style="width:${data.stars*20}%">    
-                                </div>
-                            </div>
-                            <div class="product__quantities">
-                                <input type="button" value="+" class="product__increase">
-                                <input type="number" placeholder="0" min="0" max="100" class="product__number">
-                                <input type="button" value="-" class="product__decrease">
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="product__info">
-                <input type="button" value="Agregar" class="product__addBtn hidden showLoggedIn">
-                <h4 class="product__price">$ ${data.price}</h4>
-            </div>
-            <button class="hidden showLoggedAdmin">delete</button>
-        ` ;
-        product.classList.add('product'); 
-        //product.setAttribute('href', '#');
-        list.appendChild(product);
-        //console.log();
-        const addBtn = product.querySelector('.product__addBtn');
-        addBtn.addEventListener('click', function(){
-            addToMyCart({
-                ...data,
-                id: doc.id,
-            });
-            
-            
-            //console.log(cart.length, cartBtnNumber);
-        });
-    });
-}*/
-
-const handleRenderOrders = (querySnapshot) =>{
-    orders.innerHTML = ``;
-
-    querySnapshot.forEach((doc) =>{
-        const data = doc.data();
-
-        const orderContainer = document.createElement('div');
-        let img = data.cart[0]?.images[0]?.url;
-
-        orderContainer.innerHTML = `
-        <h2 class="orders__name">Nombre de usuario</h2>
-        <section class="orders__list">
-            <img class="orders__img" src="${img}">
-            <div class="orders__info">
-                <h2 class="orders__productName">${data.name}</h2> 
-                <div class="orders__numbers">
-                    <h2 class="orders__productPrice">${data.price}</h2> 
-                    <p class="orders__quantity">X2</p>
-                </div>
-            </div>
-        </section>
-        `;
-        orderContainer.classList.add('orderContainer');
-        orders.appendChild(orderContainer);
-
-    });
-}
 
 //poder previsualizar la imagen
 productForms.image.addEventListener('change', function(){
@@ -124,12 +55,12 @@ function handleSubmit(a){
         createdAt: new Date(Date.now()),
         //id: docRef.id
     };
-    if(productForms.status_traditional.checked) product.status.push('traditional');
+    /*if(productForms.status_traditional.checked) product.status.push('traditional');
     if(productForms.status_recent.checked) product.status.push('recent');
     if(productForms.status_new.checked) product.status.push('new');
 
     if(productForms.content_vegan.checked) product.content.push('vegan');
-    if(productForms.content_NoVegan.checked) product.content.push('no vegan');
+    if(productForms.content_NoVegan.checked) product.content.push('no vegan');*/
 
     //Crear avisos de errores
     let error = ''; 
@@ -230,5 +161,92 @@ const checkProductFormAdmin = () => {
       location.href = '/store.html';
     }
 }
+
+//poder ver el pedido del user
+
+/*const handleCollectionResult = (querySnapshot) => {
+    list.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+        const data =  doc.data();
+        
+        // doc.data() is never undefined for query doc snapshots
+        //console.log(doc.id, " => ", data);
+        const product = document.createElement('article');
+        let img = data.images[0]?.url;
+
+        if(!img){
+            img = './resources/placeholder.jpeg'
+        }
+        product.innerHTML =`
+            <div class="product__contentImage">
+                    <div class="image">
+                        <img class="product__img" src="${img}">
+                        <div class="product__information">
+                            <div class="product__data">
+                                <a class="product__title" href="./productDetails.html?id=${doc.id}&name=${data.name}">${data.name}</a>
+                                <div class="product__calification">
+                                    <img src="resources/calification.png" style="width:${data.stars*20}%">    
+                                </div>
+                            </div>
+                            <div class="product__quantities">
+                                <input type="button" value="+" class="product__increase">
+                                <input type="number" placeholder="0" min="0" max="100" class="product__number">
+                                <input type="button" value="-" class="product__decrease">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="product__info">
+                <input type="button" value="Agregar" class="product__addBtn hidden showLoggedIn">
+                <h4 class="product__price">$ ${data.price}</h4>
+            </div>
+            <button class="hidden showLoggedAdmin">delete</button>
+        ` ;
+        product.classList.add('product'); 
+        //product.setAttribute('href', '#');
+        list.appendChild(product);
+        //console.log();
+        const addBtn = product.querySelector('.product__addBtn');
+        addBtn.addEventListener('click', function(){
+            addToMyCart({
+                ...data,
+                id: doc.id,
+            });
+            
+            
+            //console.log(cart.length, cartBtnNumber);
+        });
+    });
+}*/
+
+/*const handleRenderOrders = (querySnapshot) =>{
+    orders.innerHTML = ``;
+
+    querySnapshot.forEach((doc) =>{
+        const data = doc.data();
+
+        const orderContainer = document.createElement('div');
+        let img = data.cart[0]?.images[0]?.url;
+
+        orderContainer.innerHTML = `
+        <h2 class="orders__name">Nombre de usuario</h2>
+        <section class="orders__list">
+            <img class="orders__img" src="${img}">
+            <div class="orders__info">
+                <h2 class="orders__productName">${data.name}</h2> 
+                <div class="orders__numbers">
+                    <h2 class="orders__productPrice">${data.price}</h2> 
+                    <p class="orders__quantity">X2</p>
+                </div>
+            </div>
+        </section>
+        `;
+        orderContainer.classList.add('orderContainer');
+        orders.appendChild(orderContainer);
+
+    });
+}*/
+
+
 
 //db.collection('cart').get().then(handleRenderOrders);

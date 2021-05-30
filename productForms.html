@@ -10,23 +10,28 @@
 </head>
 <body>
     <header>
-        <div class="menu">
-            <img class="header__logoAmplio" src="./resources/LogoSweetMood.png">
-            <img class="header__logoCorto" src="./resources/logoNuevo.png">
-            <nav class="header">
-                <ul class="header__options">
-                    <li><a class="header__options" href="./index.html">Inicio</a></li>
-                    <li><a class="header__options actual" href="./store.html">Productos</a></li>
-                    <li><a class="header__options" href="./cart.html">Canasta</a></li>
-                </ul>
-            </nav>
-        </div>
+        <section class="menuSection">
+            <div class="menuSection__sec1">
+                <img class="menuSection__logoAmplio" src="./resources/LogoSweetMood.png">
+                <img class="menuSection__logoCorto" src="./resources/logoNuevo.png">
+            </div>
+            <div class="menuSection__sec2">
+                <a class="menuSection__option" href="./index.html">Inicio</a>
+                <a class="menuSection__option" href="./store.html">Productos</a>
+                <div>
+                    <a href="./cart.html"><img class="menuSection__menuCart" src="./resources/cart.png"></a>
+                    <a class="cartBtn hidden"> <span></span></a>
+                </div>
+                <a><img class="menuSection__menuUser" src="./resources/user.png"></a>
+                <a class="menuSection__logOut hidden">Cerrar sesión</a>
+            </div>
+        </section>
     </header>
 
-    <section class="options">
-        <button class="options__btn">Órdenes</button>
-        <button class="options__btn">Agregar producto</button>
-        <button class="options__btn">Quitar productos</button>
+    <section class="adminBtn">
+        <button class="adminBtn__orders">Órdenes</button>
+        <button class="adminBtn__add">Agregar producto</button>
+        <button class="adminBtn__delete">Quitar productos</button>
     </section>
 
     <!--///////////-->
@@ -64,7 +69,6 @@
     <!--///////////-->
 
     <form class="productForms">
-       
         <div class="productForms__name">
             <label class="productForms__label" for="name">Nombre</label>
             <input class="productForms__input" id="name" name="name" type="text" placeholder="Nombre del producto">
@@ -85,38 +89,9 @@
             </select>
         </div>
 
-        <div class="productForms__status">
-            <label class="productForms__label">Status</label>
-
-            <div class="productForms__statusOptions">
-                <label class="productForms__label">
-                    Traditional
-                <input class="productForms__checkbox" name="status_traditional" type="checkbox">
-                </label>
-
-                <label class="productForms__label">
-                    Recent
-                <input class="productForms__checkbox" name="status_recent" type="checkbox">
-                </label>
-
-                <label class="productForms__label">
-                    New
-                <input class="productForms__checkbox" name="status_new" type="checkbox">
-                </label>
-            </div>
-        </div>
-
-        <div class="productForms__content">
-            <label class="productForms__label">Contenido</label>
-
-            <div class="productForms__contentOptions">
-                <label class="productForms__label">Vegan
-                    <input class="productForms__checkbox" name="content_vegan" type="checkbox">
-                </label>
-                <label class="productForms__label">No Vegan
-                    <input class="productForms__checkbox" name="content_NoVegan" type="checkbox">
-                </label>
-            </div>
+        <div class="productForms__text">
+            <label class="productForms__label">Descripción del producto</label>
+            <textarea></textarea>
         </div>
 
         <div class="productForms__stars">
@@ -137,8 +112,6 @@
             </label>
         </div>
         
-        
-
         <button class="productForms__button" type="submit">Enviar</button>
     </form>
 

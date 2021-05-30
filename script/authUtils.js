@@ -1,40 +1,40 @@
-
+const menuUser = document.querySelector('.menuSection__menuUser');
+const menuLogout = document.querySelector('.menuSection__logOut');
+const cartCounter = document.querySelector('.cartBtn');
+//const adminBtn = document.querySelector('.headerStore__admin');
+//const nameUser = document.querySelector('.headerStore__loggedName');
 
 //para mostrar cosas que solo se van a mostrar cuando ya esté inicializado
 function userAuthChanged(loggedIn){
     console.log(loggedIn);
     const filters = document.querySelector('.filters');
     
-    const showLoggedIn = document.querySelectorAll('.showLoggedIn');
-    showLoggedIn.forEach(function(elem){
+        //para los botones de iniciar y cerrar sesion
         if(loggedIn){
-            elem.classList.remove('hidden');
+            menuUser.classList.add('hidden');
+            menuLogout.classList.remove('hidden');
+            cartCounter.classList.remove('hidden');
+            //nameUser.classList.remove('hidden');
+            
         }else{
-            elem.classList.add('hidden');
+            menuUser.classList.remove('hidden');
+            menuLogout.classList.add('hidden');
+            cartCounter.classList.add('hidden')
+            //nameUser.classList.add('hidden');
         }
-    });
-
-    const hideLoggedIn = document.querySelectorAll('.hideLoggedIn');
-    hideLoggedIn.forEach(function(elem){
-        if(loggedIn){
-            elem.classList.add('hidden');
-        }else{
-            elem.classList.remove('hidden'); 
-        }
-    });
-
-    const showLoggedAdmin = document.querySelectorAll('.showLoggedAdmin');
-    showLoggedAdmin.forEach(function(elem){
-        if(loggedIn && loggedUser.admin){
-            elem.classList.remove('hidden');
-        }else{
-            elem.classList.add('hidden');
-        }
-    });
     
 }
 
 
+
+menuUser.addEventListener('click', ()=>{
+    authModal.style.display = 'block';
+    setTimeout(handleModalAppear, 1);
+});
+
+menuLogout.addEventListener('click', ()=>{
+    firebase.auth().signOut();
+});
 
 function userLoggedOut(){
 

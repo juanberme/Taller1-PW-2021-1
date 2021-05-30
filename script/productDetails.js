@@ -1,4 +1,77 @@
 const params = new URLSearchParams(location.search);
+const productTitle = document.querySelector('.productDet__title');
+const productImg = document.querySelector('.productDet__principalImg');
+const productPrice = document.querySelector('.productDet__price');
+
+const id = params.get('id');
+
+let productsCollection = db.collection('products');
+
+const productDetails = document.querySelector('.productDet');
+const addBtn = document.querySelector('.productDet__add');
+const decreaseAmount = productDetails.querySelector('.productDet__decrease');
+const increaeAmount = productDetails.querySelector('.productDet__increase');
+const numberAmount = productDetails.querySelector('.productDet__number');
+
+db.collection('products')
+    .doc(id)
+    .get()
+    .then(function (doc){
+        console.log(doc.id, doc.data());
+        const data = doc.data();
+        if(!data){
+            location.href="./404.html";
+        }
+        let img = data.images[0]?.url;
+        if(!img){
+            img = './resources/placeholder.jpeg'
+        }
+        productImg.setAttribute('src',img);
+        productTitle.innerHTML = data.name;
+        productPrice.innerHTML = data.price;
+
+        
+
+//para agregar al carrito desde productDetail
+
+increaeAmount.addEventListener('click', function() {
+    numberAmount.value++;
+    console.log(numberAmount.value);
+
+});
+
+decreaseAmount.addEventListener('click', function(){
+    numberAmount.value--;
+    if(numberAmount.value < 0){
+        numberAmount.value = 0;
+    }
+})
+
+
+addBtn.addEventListener('click', function(){
+    if(loggedUser){
+        addToMyCart({
+        ...data,
+        id: doc.id,
+    });
+    //localStorage.setItem('store__cart', JSON.stringify(cart));
+    } else{
+        handleGoToLogin();
+    }
+    console.log(cart.length, cartBtnNumber);
+});
+
+});
+
+
+
+
+
+//por si no encuentra una página, lo redirige a esta
+if(!id){
+    location.href="./404.html";
+}
+/*const params = new URLSearchParams(location.search);
 const id = params.get('id');
 
 let productsCollection = db.collection('products');
@@ -69,4 +142,4 @@ const addBtn = productDetails.querySelector('.productDet__add');
 //por si no encuentra una página, lo redirige a esta
 if(!id){
     location.href="./404.html";
-}
+}*/

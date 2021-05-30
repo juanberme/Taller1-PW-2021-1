@@ -1,6 +1,7 @@
 const list = document.querySelector('.cartList');
 const totalSpan = document.querySelector('.checkout__total span');
 const checkoutForm = document.querySelector('.checkout__form');
+const cartProductsList = document.querySelector('.cartProducts__list');
 
 let total = 0;
 
@@ -11,42 +12,37 @@ renderCart = () =>{
      
         // doc.data() is never undefined for query doc snapshots
         //console.log(doc.id, " => ", data);
-        const product = document.createElement('article');
+        //const cartProductsContent = document.querySelector('.cartProducts__content');
+
+
+        const cartProductsContent = document.createElement('div');
         let img = data.images[0]?.url;
         if(!img){
             img = './resources/placeholder.jpeg'
         }
-        product.innerHTML =`
-            <div class="product__contentImage">
-                    <div class="image">
-                        <img class="product__img" src="${img}">
-                        <div class="product__information">
-                            <div class="product__data">
-                            <p class="product__title">${data.name}</p>
-                                <div class="product__calification">
-                                    <img src="resources/calification.png" style="width:${data.stars*20}%">    
-                                </div>
-                            </div>
-                            <div class="product__quantities">
-                                <input type="button" value="+" class="product__increase">
-                                <input type="number" placeholder="0" min="0" max="100" class="product__number">
-                                <input type="button" value="-" class="product__decrease">
-                            </div>
-                        </div>
+
+        cartProductsContent.innerHTML =`
+            <div class="cartProducts__content">
+                    <div class="cartProducts__imgContent">
+                        <img class="cartProducts__img" src="${img}">
                     </div>
+                        <div class="cartProducts__info">
+                                <h2 class="cartProducts__title">${data.name}</h2>
+                                <h2 class="cartProducts__price">$ ${data.price}</h2>
+                        </div>
             </div>
-            <div class="product__info">
-                <input type="button" value="Quitar" class="product__addBtn">
-                <h4 class="product__price">$ ${data.price}</h4>
-            </div>
-            <button class="hidden showLoggedAdmin">delete</button>
+           
         ` ;
-        product.classList.add('product'); 
+        cartProductsContent.classList.add('.cartProducts__content'); 
         //product.setAttribute('href', '#');
-        list.appendChild(product);
+        list.appendChild(cartProductsContent);
         //console.log();
+        
+        //cartProductsList.appendChild(cartProductsContent);
         total += data.price;
     }); 
+
+    
     totalSpan.innerText = total; 
     checkoutForm.addEventListener('submit', function(event){
         event.preventDefault();
@@ -58,6 +54,7 @@ renderCart = () =>{
         });
         
         const order = {
+            name: checkoutForm.cartName.value,
             cardNumber: checkoutForm.ccnumber.value,
             address: checkoutForm.address.value,
             date: Date.now(),

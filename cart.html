@@ -6,24 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="Stylesheet" href="./style/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Yeseva+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="checkout">
-        <section class="checkout__list cartList"></section>
-        <section class="checkout__summary">
-            <h3 class="checkout__total">Total: $<span></span></h3>
-            <form class="checkout__form">
-                <div class="field">
-                    <label class="field__label" for="ccnumber">Número de la tarjeta de credito</label>
-                    <input class="field__input" id="ccnumber" name="ccnumber" type="number" placeholder="">
+<!--menu header-->
+    <header>
+        <section class="menuSection">
+            <div class="menuSection__sec1">
+                <img class="menuSection__logoAmplio" src="./resources/LogoSweetMood.png">
+                <img class="menuSection__logoCorto" src="./resources/logoNuevo.png">
+            </div>
+            <div class="menuSection__sec2">
+                <a class="menuSection__option" href="./index.html">Inicio</a>
+                <a class="menuSection__option " href="./store.html">Productos</a>
+                <div>
+                    <a href="./cart.html"><img class="menuSection__menuCart" src="./resources/cartSelect.png"></a>
+                    <a class="cartBtn hidden"> <span></span></a>
                 </div>
-                <div class="field">
-                    <label class="field__label" for="address">Dirección de entregar</label>
-                    <input class="field__input" id="address" name="address" type="text" placeholder="">
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
+                <a class="menuSection__logOut hidden">Cerrar sesión</a>
+                <a><img class="menuSection__menuUser" src="./resources/user.png"></a>
+            </div>
         </section>
+        <div class="headerBorder"></div>
+    </header>
+
+    <!--nuevo contenedor-->
+    <!--<section class="cartProducts">
+        <h2 class="cartProducts__username">Nombre de usuario</h2>
+        <div class="cartProducts__list"></div>
+    </section>-->
+    
+    <!--<section class="cartProducts">
+        <h2 class="cartProducts__username">Nombre de usuario</h2>
+        <div class="cartProducts__list">
+            <div class="cartProducts__content">
+                <div class="cartProducts__imgContent">
+                    <img class="cartProducts__img" src="./resources/placeholder.jpeg">
+                </div>
+                <div class="cartProducts__info">
+                    <h2 class="cartProduct__title">Nombre del producto</h2>
+                    <h2 class="cartProducts__price">$XXXX</h2>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <main class="checkout">
+
+        <div class="checkout__allInfo">
+            <div class="checkout__totalAmount">
+                <h3 class="checkout__total">Total: $<span></span></h3>
+            </div>
+            <section class="checkout__summary"> 
+                <h1 class="checkout__resume">método de pago</h1>
+                <form class="checkout__form">
+                    <div class="field">
+                        <label class="field__label" for="cartName">Nombre</label>
+                        <input class="field__input" id="cartName" name="cartName" type="text" placeholder="Escribe tu nombre">
+                    </div>
+                    <div class="field">
+                        <label class="field__label" for="ccnumber">Tarjeta de crédito</label>
+                        <input class="field__input" id="ccnumber" name="ccnumber" type="number" placeholder="Ingresa tu tarjera de crédito">
+                    </div>
+                    <div class="field">
+                        <label class="field__label" for="address">Dirección</label>
+                        <input class="field__input" id="address" name="address" type="text" placeholder="Dirección de entrega">
+                    </div>
+                    <button class="checkout__send" type="submit">Enviar</button>
+                </form>   
+            </section>
+        </div>
+        
+        <section class="checkout__list cartList"></section>
+        
     </main>
     
 
