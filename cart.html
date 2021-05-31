@@ -10,25 +10,35 @@
 </head>
 <body>
 <!--menu header-->
-    <header>
-        <section class="menuSection">
-            <div class="menuSection__sec1">
-                <img class="menuSection__logoAmplio" src="./resources/LogoSweetMood.png">
-                <img class="menuSection__logoCorto" src="./resources/logoNuevo.png">
+<header>
+    <section class="menuSection">
+        <div class="menuSection__sec1">
+            <img class="menuSection__logoAmplio" src="./resources/LogoSweetMood.png">
+            <img class="menuSection__logoCorto" src="./resources/logoNuevo.png">
+        </div>
+        <img class="menuSection__menuHeader" src="./resources/menu.png">
+        <div class="menuSection__sec2">
+            
+            <a class="menuSection__option" href="./index.html">Inicio</a>
+            <a class="menuSection__option" href="./store.html">Productos</a>
+            <div>
+                <a href="./cart.html"><img class="menuSection__menuCart" src="./resources/cartSelect.png"></a>
+                <a class="cartBtn hidden"> <span></span></a>
             </div>
-            <div class="menuSection__sec2">
-                <a class="menuSection__option" href="./index.html">Inicio</a>
-                <a class="menuSection__option " href="./store.html">Productos</a>
-                <div>
-                    <a href="./cart.html"><img class="menuSection__menuCart" src="./resources/cartSelect.png"></a>
-                    <a class="cartBtn hidden"> <span></span></a>
-                </div>
-                <a class="menuSection__logOut hidden">Cerrar sesión</a>
-                <a><img class="menuSection__menuUser" src="./resources/user.png"></a>
-            </div>
-        </section>
-        <div class="headerBorder"></div>
-    </header>
+            <a><img class="menuSection__menuUser" src="./resources/user.png"></a>
+            <a class="menuSection__logOut hidden">Cerrar sesión</a>
+            <a><img class="menuSection__menuBtnHide" src="./resources/menu.png"></a>
+        </div>
+    </section>
+</header>
+
+<section class="menuSection2 hidden">
+    <a class="menuSection2__option" href="./index.html">Inicio</a>
+    <a class="menuSection2__option actual" href="./store.html">Productos</a>
+    <a><img class="menuSection2__menuUser" src="./resources/userV2.png"></a>
+    <a class="menuSection2__logOut">Cerrar sesión</a>
+</section>
+<div class="divDivider"></div>
 
     <!--nuevo contenedor-->
     <!--<section class="cartProducts">
@@ -80,6 +90,38 @@
         <section class="checkout__list cartList"></section>
         
     </main>
+
+    <footer class="final">
+        <div class="final__info">
+            <div class="final__newsletter">
+                <p class="letter">Subscribete a nuestro newsletter</p>
+                    <input type="email" value=" Email" class="final__email">
+                    <input type="button" value=">" class="final__button">
+            </div>
+            <div class="final__content">
+                <div class="final__contactUs">
+                    <h4>Contact Us</h4>
+                    <p>Help center</p>
+                    <p>Share your story</p>
+                    <p>News</p>
+                </div>
+                <div class="final__about">
+                    <h4>About</h4>
+                    <p>Who we are?</p>
+                    <p>Location</p>
+                    <p>Impact</p>
+                    <p>Our team</p>
+                </div>
+                <div class="final__products">
+                    <h4>Products</h4>
+                    <p>Best seller</p>
+                    <p>New products</p>
+                    <p>Events</p>
+                    <p>Organice by price</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     
 
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>

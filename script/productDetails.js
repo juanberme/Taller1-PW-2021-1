@@ -2,6 +2,14 @@ const params = new URLSearchParams(location.search);
 const productTitle = document.querySelector('.productDet__title');
 const productImg = document.querySelector('.productDet__principalImg');
 const productPrice = document.querySelector('.productDet__price');
+const starsCount = document.querySelector('.productDet__starsCount');
+const productDescription = document.querySelector('.productDet__description');
+const radioBtn1 = document.querySelector('.productDet__radio1');
+const radioBtn2 = document.querySelector('.productDet__radio2');
+const radioBtn3 = document.querySelector('.productDet__radio3');
+let indexSlide = 2;
+
+
 
 const id = params.get('id');
 
@@ -22,13 +30,33 @@ db.collection('products')
         if(!data){
             location.href="./404.html";
         }
-        let img = data.images[0]?.url;
+        productImg.setAttribute('src', data.images[0]?.url);
+        radioBtn1.addEventListener('click',()=>{
+            productImg.setAttribute('src', data.images[0]?.url);
+            //console.log(indexSlide);
+        });
+        
+        radioBtn2.addEventListener('click',()=>{
+            productImg.setAttribute('src', data.images[1]?.url);
+            //console.log(indexSlide);
+        });
+        
+        radioBtn3.addEventListener('click',()=>{
+            productImg.setAttribute('src', data.images[2]?.url);
+            //console.log(indexSlide);
+        });
+        /*let img = data.images[indexSlide]?.url;
         if(!img){
             img = './resources/placeholder.jpeg'
-        }
-        productImg.setAttribute('src',img);
+        }*/
+        
+        console.log(indexSlide);
+        
         productTitle.innerHTML = data.name;
         productPrice.innerHTML = data.price;
+        productDescription.innerHTML = data.description;
+        var totalStars =''+data.stars*20+'%';
+        starsCount.style.width = totalStars;
 
         
 
@@ -54,7 +82,6 @@ addBtn.addEventListener('click', function(){
         ...data,
         id: doc.id,
     });
-    //localStorage.setItem('store__cart', JSON.stringify(cart));
     } else{
         handleGoToLogin();
     }

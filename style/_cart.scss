@@ -17,7 +17,6 @@
         display: flex;
         background: #7B8CDE;
         border-radius: 10px;
-        width: 300px;
     }
 
     &__imgContent{
@@ -125,5 +124,16 @@
         padding: 1em;
         border: 4px solid #7B8CDE;
         border-radius: 10px;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .checkout{
+        display: flex;
+        flex-direction: column;
+
+        &__list{
+            display: contents;
+        }
     }
 }

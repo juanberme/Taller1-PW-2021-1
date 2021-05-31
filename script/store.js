@@ -1,6 +1,9 @@
 const list = document.querySelector('.list');
 const filters = document.querySelector('.filters');
 const adminBtn = document.querySelector('.headerStore__admin');
+const hideBtn = document.querySelector('.headerStore__button');
+const menuHideBtn = document.querySelector('.menuSection__menuBtnHide');
+const menuSection2 = document.querySelector('.menuSection2');
 
 console.log(loggedUser);
 let user = loggedUser;
@@ -8,17 +11,15 @@ let user = loggedUser;
 setTimeout(function(){
     console.log(loggedUser);
 }, 2000);
-
-
-const hideBtn = document.querySelector('.headerStore__button');
+let menuHide = true;
 let isHide = true
 
 hideBtn.addEventListener('click', function(){
-    console.log(loggedUser.name);
+    //console.log(loggedUser.name);
     if(isHide == !true){
         filters.classList.add('hidden');
         console.log(isHide);
-        isHide =!true;
+        isHide = true;
     }else{
         filters.classList.remove('hidden');
         console.log(isHide);
@@ -26,7 +27,17 @@ hideBtn.addEventListener('click', function(){
     }
 });
 
-const checkProductFormAdmin = () => {
+menuHideBtn.addEventListener('click', ()=>{
+    if(menuHide == !true){
+       menuSection2.classList.add('hidden');
+       menuHide = true; 
+    }else{
+        menuSection2.classList.remove('hidden');
+        menuHide = !true;  
+    }
+});
+
+const checkAdminBtn = () => {
     if(!loggedUser || !loggedUser.admin) {
       adminBtn.classList.add('hidden');
     }else{
@@ -101,10 +112,16 @@ const handleCollectionResult = (querySnapshot) => {
         
 
         addBtn.addEventListener('click', function(){
-            addToMyCart({
-                ...data,
-                id: doc.id,
-            });
+            if(loggedUser == null){ 
+                authModal.style.display = 'block';
+                setTimeout(handleModalAppear, 1);
+            }else{
+                addToMyCart({
+                    ...data,
+                    id: doc.id,
+                });
+            }
+            
             
             
             //console.log(cart.length, cartBtnNumber);

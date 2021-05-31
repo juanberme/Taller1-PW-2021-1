@@ -113,6 +113,27 @@ nav ul li a:hover:before{
     &__menuUser:hover{
         content: url('../resources/userSelect.png');
     }
+
+    &__logoCorto{
+        display: none;
+    }
+
+    &__logoAmplio{
+        display: flex;
+    }
+
+    &__menuHeader{
+        display: none;
+    }
+
+    &__menuBtnHide{
+        width: 32px;
+        height: 32px;
+    }
+
+    &__menuBtnHide{
+        display: none;
+    }
 }
 
 /*.header{
@@ -175,52 +196,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
-
-
-/*.menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    padding: 24px;
-    box-sizing: border-box;
-    z-index: 3;
-    position: sticky;
-    top: 0;
-    background: white;
+.divDivider{
+    height: 4px;
+    background: #7B8CDE;
 }
-
-.option{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    column-gap: 24px;
-    padding-left: 2em;
-    padding-right: 2em;
-}
-
-.option2{
-    display: none;
-    position: fixed;
-    top: 107px;
-    z-index: 1;
-    h6{
-        color: white;
-        margin-right: 2em;
-    }
-}
-
-.menuPic{
-    display: none;
-}
-
-.logoCorto{
-    display: none;
-}*/
-
-
-
 
 @media only screen and (max-width: 1100px){
     .option{
@@ -243,14 +222,48 @@ input[type=number]::-webkit-outer-spin-button {
         padding: 1em;
     }
 
-    .logoCorto{
+    .menuSection{
+        &__logoCorto{
+            display: flex;
+        }
+    
+        &__logoAmplio{
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .menuSection{
+        &__option{
+            display: none;
+        }
+
+        &__menuUser{
+            display: none;
+        }
+
+        &__logOut{
+            display: none;
+        }
+
+        &__menuBtnHide{
+            display: flex;
+        }
+        /*&__menuHeader{
+            display: flex;
+        }
+
+        &__sec2{
+            display: none;
+        }*/
+
+    }
+
+    /*.menuSecShow{
         display: flex;
-    }
-
-    .logoAmplio{
-        display: none;
-    }
-
+        flex-direction: column;
+    }*/
 }
 
 

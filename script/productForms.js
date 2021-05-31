@@ -1,4 +1,3 @@
-
 const productForms = document.querySelector('.productForms');
 const productFormsSuccess = document.querySelector('.successfullMsg');
 const productFormsLoading = document.querySelector('.loadingMsg');
@@ -6,20 +5,37 @@ const productFormsError = document.querySelector('.errorMsg');
 const productFormsImages = document.querySelector('.productForms__images');
 const orders = document.querySelector('.orders');
 const ordersBtn = document.querySelector('.adminBtn__orders');
-const addBtn = document.querySelector('.adminBtn__add');
+const adminAddBtn = document.querySelector('.adminBtn__add');
 const deleteBtn = document.querySelector('.adminBtn__delete');
+const textArea = document.querySelector('.productForms__textArea');
+const cartInfo = document.querySelector('.cartInfo');
+const orderFinal = document.querySelector('.orders__final');
+const ordersForms = document.querySelector('.ordersForms');
+let id;
+
+const menuShow = document.querySelector('.menuSection__menuHeader');
+const headerMenu = document.querySelector('.menuSection__sec2');
+menuShow.addEventListener('click', ()=>{
+    headerMenu.classList.add('menuSecShow');
+});
 
 //botones de las opciones
 ordersBtn.addEventListener('click', ()=>{
     productForms.classList.add('hidden');
+    orderFinal.classList.add('hidden');
+    cartInfo.classList.remove('hidden');
 });
 
-addBtn.addEventListener('click', ()=>{
+adminAddBtn.addEventListener('click', ()=>{
     productForms.classList.remove('hidden');
+    orderFinal.classList.add('hidden');
+    cartInfo.classList.add('hidden');
 });
 
 deleteBtn.addEventListener('click', ()=>{
     productForms.classList.add('hidden');
+    orderFinal.classList.remove('hidden');
+    cartInfo.classList.add('hidden');
 });
 
 const imageFiles = [];
@@ -49,8 +65,7 @@ function handleSubmit(a){
         name: productForms.name.value,
         price: parseInt(productForms.price.value),
         type: productForms.type.value,
-        status: [],
-        content: [],
+        description: textArea.value,
         stars: productForms.stars.value,
         createdAt: new Date(Date.now()),
         //id: docRef.id
@@ -104,7 +119,7 @@ function handleSubmit(a){
     }
 
 
-       //espera a subir la informacion al firebase
+    //espera a subir la informacion al firebase
     db.collection("products").add(product)
     .then(function(docRef){
 
@@ -164,89 +179,97 @@ const checkProductFormAdmin = () => {
 
 //poder ver el pedido del user
 
-/*const handleCollectionResult = (querySnapshot) => {
-    list.innerHTML = '';
-    querySnapshot.forEach((doc) => {
-        const data =  doc.data();
-        
-        // doc.data() is never undefined for query doc snapshots
-        //console.log(doc.id, " => ", data);
-        const product = document.createElement('article');
-        let img = data.images[0]?.url;
 
-        if(!img){
-            img = './resources/placeholder.jpeg'
-        }
-        product.innerHTML =`
-            <div class="product__contentImage">
-                    <div class="image">
-                        <img class="product__img" src="${img}">
-                        <div class="product__information">
-                            <div class="product__data">
-                                <a class="product__title" href="./productDetails.html?id=${doc.id}&name=${data.name}">${data.name}</a>
-                                <div class="product__calification">
-                                    <img src="resources/calification.png" style="width:${data.stars*20}%">    
-                                </div>
-                            </div>
-                            <div class="product__quantities">
-                                <input type="button" value="+" class="product__increase">
-                                <input type="number" placeholder="0" min="0" max="100" class="product__number">
-                                <input type="button" value="-" class="product__decrease">
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="product__info">
-                <input type="button" value="Agregar" class="product__addBtn hidden showLoggedIn">
-                <h4 class="product__price">$ ${data.price}</h4>
-            </div>
-            <button class="hidden showLoggedAdmin">delete</button>
-        ` ;
-        product.classList.add('product'); 
-        //product.setAttribute('href', '#');
-        list.appendChild(product);
-        //console.log();
-        const addBtn = product.querySelector('.product__addBtn');
-        addBtn.addEventListener('click', function(){
-            addToMyCart({
-                ...data,
-                id: doc.id,
-            });
-            
-            
-            //console.log(cart.length, cartBtnNumber);
-        });
-    });
-}*/
-
-/*const handleRenderOrders = (querySnapshot) =>{
+db.collection('products').onSnapshot((querySnapshot) =>{
     orders.innerHTML = ``;
 
     querySnapshot.forEach((doc) =>{
         const data = doc.data();
 
         const orderContainer = document.createElement('div');
-        let img = data.cart[0]?.images[0]?.url;
+        let img = data.images[0]?.url;
 
         orderContainer.innerHTML = `
-        <h2 class="orders__name">Nombre de usuario</h2>
-        <section class="orders__list">
-            <img class="orders__img" src="${img}">
-            <div class="orders__info">
-                <h2 class="orders__productName">${data.name}</h2> 
-                <div class="orders__numbers">
-                    <h2 class="orders__productPrice">${data.price}</h2> 
-                    <p class="orders__quantity">X2</p>
-                </div>
+            <div class="orders__content">
+                    <section class="orders__list">
+                        <img class="orders__img" src="${img}">
+                        <div class="orders__info">
+                            <h2 class="orders__productName">${data.name}</h2> 
+                            <div class="orders__numbers">
+                                <h2 class="orders__productPrice">$${data.price}</h2> 
+                                <p class="orders__quantity">${data.stars}</p>
+                                <p class="orders__quantity">${data.type}</p>
+                            </div>
+                        </div>
+                        <div class="orders__optionsBtn">
+                            <button class="orders__delete"><img class="orders__DeleteIcon" src="./resources/close.png"></button>
+                            <button class="orders__edit"><img class="orders__editIcon" src="./resources/edit.png"></button>
+                        </div>
+                    </section>
             </div>
-        </section>
         `;
         orderContainer.classList.add('orderContainer');
         orders.appendChild(orderContainer);
 
+        const deleteOrder = orderContainer.querySelector('.orders__delete');
+        const editOrder = orderContainer.querySelector('.orders__edit');
+
+        deleteOrder.addEventListener('click', ()=>{
+            console.log('entro delete');
+            db.collection('products').doc(doc.id).delete();
+        });
+
+
+        editOrder.addEventListener('click', ()=>{
+            console.log('entro delete');
+            ordersForms.classList.remove('hidden');
+             id = doc.id;
+        });
+
+        const editBtn = document.querySelector('.productForms__button');
+
+        editBtn.addEventListener('click', ()=>{
+
+        ordersForms.classList.add('hidden');
+            db.collection('products').doc(id).update({
+                name: ordersForms.name.value,
+                price: ordersForms.price.value,
+                type: ordersForms.type.value,
+                stars: ordersForms.stars.value
+            });
+        });
     });
-}*/
+});
 
 
 
-//db.collection('cart').get().then(handleRenderOrders);
+
+
+//////////
+const handleRenderCart = (querySnapshot) =>{
+    cartInfo.innerHTML = ``;
+
+    querySnapshot.forEach((doc) =>{
+        const data = doc.data();
+
+        const cartInfoContent = document.createElement('div');
+        //let img = data.images[0]?.url;
+
+        cartInfoContent.innerHTML = `
+        <section class="cartInfo__list">
+        <h2 class="cartInfo__name"> ${data.name}</h2> 
+            <div class="cartInfo__info">
+                <h2 class="cartInfo__address"><strong cartInfo__addressTitle>Dirección:</strong> ${data.address}</h2> 
+                <h2 class="cartInfo__date"><strong cartInfo__dateTitle>Fecha:</strong> ${data.date}</h2>
+                <h2 class="cartInfo__total"><strong cartInfo__totalTitle>Total:</strong> ${data.total}</h2> 
+            </div>
+        </section>
+        `;
+        cartInfoContent.classList.add('cartInfo__content');
+        cartInfo.appendChild(cartInfoContent);
+    });
+}
+db.collection('orders').get().then(handleRenderCart);
+
+
+

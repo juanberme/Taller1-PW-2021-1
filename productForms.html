@@ -15,7 +15,9 @@
                 <img class="menuSection__logoAmplio" src="./resources/LogoSweetMood.png">
                 <img class="menuSection__logoCorto" src="./resources/logoNuevo.png">
             </div>
+            <img class="menuSection__menuHeader" src="./resources/menu.png">
             <div class="menuSection__sec2">
+                
                 <a class="menuSection__option" href="./index.html">Inicio</a>
                 <a class="menuSection__option" href="./store.html">Productos</a>
                 <div>
@@ -24,96 +26,155 @@
                 </div>
                 <a><img class="menuSection__menuUser" src="./resources/user.png"></a>
                 <a class="menuSection__logOut hidden">Cerrar sesión</a>
+                <a><img class="menuSection__menuBtnHide" src="./resources/menu.png"></a>
             </div>
         </section>
     </header>
+    
+    <section class="menuSection2 hidden">
+        <a class="menuSection2__option" href="./index.html">Inicio</a>
+        <a class="menuSection2__option actual" href="./store.html">Productos</a>
+        <a><img class="menuSection2__menuUser" src="./resources/userV2.png"></a>
+        <a class="menuSection2__logOut">Cerrar sesión</a>
+    </section>
 
     <section class="adminBtn">
         <button class="adminBtn__orders">Órdenes</button>
         <button class="adminBtn__add">Agregar producto</button>
-        <button class="adminBtn__delete">Quitar productos</button>
+        <button class="adminBtn__delete">Editar productos</button>
     </section>
 
     <!--///////////-->
+    <div class="orders__final hidden">
+        <section class="orders"></section>
+        <form class="ordersForms hidden">
+            <div class="productForms__name">
+                <label class="ordersForms__label" for="name">Nombre</label>
+                <input class="ordersForms__input" id="name" name="name" type="text" placeholder="Nombre del producto">
+            </div>
+            
+            <div class="ordersForms__price">
+                <label class="ordersForms__label" for="price">Precio</label>
+                <input class="ordersForms__input" id="price" name="price" type="number" placeholder="Precio del producto">
+            </div>
+    
+            <div class="ordersForms__type">
+                <label for="type" class="ordersForms__label">Tipo de producto</label>
+                <select id="type" class="ordersForms__input" name="type">
+                    <option value="">Selecciona una opcion</option>
+                    <option value="glazed">Glaseado</option>
+                    <option value="spark">Chispas</option>
+                    <option value="filling">Relleno</option>        
+                </select>
+            </div>
+    
+            <div class="ordersForms__stars">
+                <label for="stars" class="ordersForms__label">Cantidad de estrellas</label>
+                <select id="stars" class="ordersForms__input" name="stars">
+                    <option value="">Selecciona una opcion</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option> 
+                    <option value="4">4</option>
+                    <option value="5">5</option>        
+                </select>
+            </div>
+    
+            <button class="productForms__button" type="reset">Editar</button>
+        </form>
+    </div>
 
-    <section class="orders">
-        <!--<div>
-            <h2 class="orders__name">Nombre de usuario</h2>
-                <section class="orders__list">
-                    <img class="orders__img" src="./resources/placeholder.jpeg">
-                    <div class="orders__info">
-                        <h2 class="orders__productName">Nombre del producto</h2> 
-                        <div class="orders__numbers">
-                            <h2 class="orders__productPrice">$XXXXXX</h2> 
-                            <p class="orders__quantity">X2</p>
-                        </div>
-                    </div>
-                </section>
-        </div>-->
-    </section>
+    
 
     <!--///////////-->
 
-    <p class="loadingMsg hidden">
-        Loading...
-    </p>
+    
 
-    <p class="errorMsg hidden">
-        we had a problem, try again
-    </p>
+    
 
-    <p class="successfullMsg hidden">
-        El producto se ha agregado correctamente
-    </p>
+    <!--<section class="orders">
+        <div class="orders__name">
+            <h2>Nombre del cliente</h2>
+        </div>
+        <div class="orders__content">
+            <img src="./resources/placeholder.jpeg">
+            <div class="orders__info">
+                <h2>Nombre del product</h2>
+                <div>
+                    <h2 class="orders__price">$XXXXX</h2>
+
+                </div>
+            </div>
+        </div>
+    </section>-->
 
     <!--///////////-->
 
-    <form class="productForms">
-        <div class="productForms__name">
-            <label class="productForms__label" for="name">Nombre</label>
-            <input class="productForms__input" id="name" name="name" type="text" placeholder="Nombre del producto">
-        </div>
-        
-        <div class="productForms__price">
-            <label class="productForms__label" for="price">Precio</label>
-            <input class="productForms__input" id="price" name="price" type="number" placeholder="Precio del producto">
-        </div>
+    <section class="cartInfo hidden"></section>
 
-        <div class="productForms__type">
-            <label for="type" class="productForms__label">Tipo de producto</label>
-            <select id="type" class="productForms__input" name="type">
-                <option value="">Selecciona una opcion</option>
-                <option value="glazed">Glaseado</option>
-                <option value="spark">Chispas</option>
-                <option value="filling">Relleno</option>        
-            </select>
-        </div>
+    <!--//////////-->
+    <div class="divForms">
+        <p class="loadingMsg hidden">
+            Loading...
+        </p>
+    
+        <p class="errorMsg hidden">
+            we had a problem, try again
+        </p>
+    
+        <p class="successfullMsg hidden">
+            El producto se ha agregado correctamente
+        </p>
 
-        <div class="productForms__text">
-            <label class="productForms__label">Descripción del producto</label>
-            <textarea></textarea>
-        </div>
+        <form class="productForms">
+            <div class="productForms__name">
+                <label class="productForms__label" for="name">Nombre</label>
+                <input class="productForms__input" id="name" name="name" type="text" placeholder="Nombre del producto">
+            </div>
+            
+            <div class="productForms__price">
+                <label class="productForms__label" for="price">Precio</label>
+                <input class="productForms__input" id="price" name="price" type="number" placeholder="Precio del producto">
+            </div>
+    
+            <div class="productForms__type">
+                <label for="type" class="productForms__label">Tipo de producto</label>
+                <select id="type" class="productForms__input" name="type">
+                    <option value="">Selecciona una opcion</option>
+                    <option value="glazed">Glaseado</option>
+                    <option value="spark">Chispas</option>
+                    <option value="filling">Relleno</option>        
+                </select>
+            </div>
+    
+            <div class="productForms__text">
+                <label class="productForms__label">Descripción del producto</label>
+                <textarea class="productForms__textArea"></textarea>
+            </div>
+    
+            <div class="productForms__stars">
+                <label for="stars" class="productForms__label">Cantidad de estrellas</label>
+                <select id="stars" class="productForms__input" name="stars">
+                    <option value="">Selecciona una opcion</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option> 
+                    <option value="4">4</option>
+                    <option value="5">5</option>        
+                </select>
+            </div>
+    
+            <div class="productForms__images">
+                <label for="image" class="productForms__label">Imagen
+                    <input class="productForms__file" name="image" id="image" type="file">
+                </label>
+            </div>
+    
+            <button class="productForms__button" type="submit">Enviar</button>
+        </form>
+    </div>
 
-        <div class="productForms__stars">
-            <label for="stars" class="productForms__label">Cantidad de estrellas</label>
-            <select id="stars" class="productForms__input" name="stars">
-                <option value="">Selecciona una opcion</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option> 
-                <option value="4">4</option>
-                <option value="5">5</option>        
-            </select>
-        </div>
-
-        <div class="productForms__images">
-            <label for="image" class="productForms__label">Imagen
-                <input class="productForms__file" name="image" id="image" type="file">
-            </label>
-        </div>
-        
-        <button class="productForms__button" type="submit">Enviar</button>
-    </form>
+    
 
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>

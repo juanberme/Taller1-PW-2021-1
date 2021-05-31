@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="Stylesheet" href="./style/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Yeseva+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,18 +18,29 @@
                 <img class="menuSection__logoAmplio" src="./resources/LogoSweetMood.png">
                 <img class="menuSection__logoCorto" src="./resources/logoNuevo.png">
             </div>
+            <img class="menuSection__menuHeader" src="./resources/menu.png">
             <div class="menuSection__sec2">
+                
                 <a class="menuSection__option" href="./index.html">Inicio</a>
-                <a class="menuSection__option actual" href="./store.html">Productos</a>
+                <a class="menuSection__option" href="./store.html">Productos</a>
                 <div>
                     <a href="./cart.html"><img class="menuSection__menuCart" src="./resources/cart.png"></a>
                     <a class="cartBtn hidden"> <span></span></a>
                 </div>
                 <a><img class="menuSection__menuUser" src="./resources/user.png"></a>
                 <a class="menuSection__logOut hidden">Cerrar sesión</a>
+                <a><img class="menuSection__menuBtnHide" src="./resources/menu.png"></a>
             </div>
         </section>
     </header>
+    
+    <section class="menuSection2 hidden">
+        <a class="menuSection2__option" href="./index.html">Inicio</a>
+        <a class="menuSection2__option actual" href="./store.html">Productos</a>
+        <a><img class="menuSection2__menuUser" src="./resources/userV2.png"></a>
+        <a class="menuSection2__logOut">Cerrar sesión</a>
+    </section>
+    <div class="divDivider"></div>
     
     <!--<header class="menu">
         <div class="logo">
@@ -52,20 +64,23 @@
             <h6>Canasta</h6>
         </nav>
     </div>-->
-    <nav>
-        <a class="cartBtn" href="./cart.html">Cart <span></span></a>
-    </nav>
+    
     <section class="productDet">
 
         <div class="productDet__detImages">
             <img class="productDet__principalImg" src="">
+            <div class="productDet__slides">
+                <input class="productDet__radio1" type="radio" name="radio-btn" id="radio1">
+                <input class="productDet__radio2" type="radio" name="radio-btn" id="radio1">
+                <input class="productDet__radio3" type="radio" name="radio-btn" id="radio1">
+            </div>
         </div>
 
         <div class="productDet__info">
             <h2 class="productDet__title"></h2>
             <div class="productDet__calification">
                 <div class="productDet__star">
-                    <img src="resources/calification.png">
+                    <img class="productDet__starsCount" src="resources/calification.png">
                 </div>
                 <h4 class="productDet__rate"></h4>
             </div>
@@ -81,9 +96,39 @@
                 </div>
             </div>
         </div>
-
-
     </section>
+
+    <footer class="final">
+        <div class="final__info">
+            <div class="final__newsletter">
+                <p class="letter">Subscribete a nuestro newsletter</p>
+                    <input type="email" value=" Email" class="final__email">
+                    <input type="button" value=">" class="final__button">
+            </div>
+            <div class="final__content">
+                <div class="final__contactUs">
+                    <h4>Contact Us</h4>
+                    <p>Help center</p>
+                    <p>Share your story</p>
+                    <p>News</p>
+                </div>
+                <div class="final__about">
+                    <h4>About</h4>
+                    <p>Who we are?</p>
+                    <p>Location</p>
+                    <p>Impact</p>
+                    <p>Our team</p>
+                </div>
+                <div class="final__products">
+                    <h4>Products</h4>
+                    <p>Best seller</p>
+                    <p>New products</p>
+                    <p>Events</p>
+                    <p>Organice by price</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
@@ -94,3 +139,5 @@
     <script src="./script/productDetails.js"></script>
     <script src="./script/authModal.js"></script>
     <script src="./script/authUtils.js"></script>
+
+</body>
