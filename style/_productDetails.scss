@@ -121,9 +121,18 @@
         font-weight: bold;
         font-size: 16px;
     }
+
+    &__slides{
+        display: flex;
+        justify-content: center
+    }
     
-    &__radio1{
-        border: 4px solid #ffffff;
+    &__radio3{
+        margin-left: 1em;
+    }
+
+    &__radio2{
+        margin-left: 1em;
     }
 
     &__decrease:hover{

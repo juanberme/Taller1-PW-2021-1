@@ -2274,8 +2274,21 @@ label {
   font-size: 16px;
 }
 
-.productDet__radio1 {
-  border: 4px solid #ffffff;
+.productDet__slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.productDet__radio3 {
+  margin-left: 1em;
+}
+
+.productDet__radio2 {
+  margin-left: 1em;
 }
 
 .productDet__decrease:hover {
